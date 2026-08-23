@@ -3,7 +3,7 @@
 [![Qualidade](https://github.com/jplima-dev-ai/saude-quali-max/actions/workflows/quality.yml/badge.svg)](https://github.com/jplima-dev-ai/saude-quali-max/actions/workflows/quality.yml)
 [![GitHub Pages](https://github.com/jplima-dev-ai/saude-quali-max/actions/workflows/pages.yml/badge.svg)](https://github.com/jplima-dev-ai/saude-quali-max/actions/workflows/pages.yml)
 
-**Versão 3.8.5 — plataforma estática, acessível e white-label para lojas de produtos naturais.**
+**Versão 3.8.6 — plataforma estática, acessível e white-label para lojas de produtos naturais.**
 
 [Ver demonstração](https://jplima-dev-ai.github.io/saude-quali-max/) · [Portfólio técnico](docs/PORTFOLIO.md) · [Estudo de caso](docs/CASE-STUDY.md) · [Arquitetura](docs/ARCHITECTURE.md) · [Guia de demonstração](docs/DEMO-GUIDE.md)
 
@@ -54,10 +54,11 @@ Não há backend próprio, autenticação remota, pagamento, estoque central ou 
 
 ## Executar localmente
 
-Pré-requisitos: Python 3.12+ e Node.js 20+.
+Pré-requisitos: Python 3.12+ e Node.js 20+. Em uma cópia nova, instale também as dependências Python declaradas no projeto.
 
 ```bash
 npm install
+npm run setup:python
 npm run dev
 ```
 

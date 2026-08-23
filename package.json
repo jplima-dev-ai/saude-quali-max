@@ -1,10 +1,11 @@
 {
   "name": "saude-qualimax",
-  "version": "3.8.5",
+  "version": "3.8.6",
   "private": true,
   "description": "Plataforma estática, acessível e white-label para lojas de produtos naturais.",
   "scripts": {
     "dev": "python tools/serve.py",
+    "setup:python": "python -m pip install -r requirements.txt",
     "build": "python tools/build-pages.py",
     "test": "python tools/run-tests.py --rounds 1",
     "test:release": "python tools/run-tests.py --rounds 3",

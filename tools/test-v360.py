@@ -17,7 +17,7 @@ def main() -> None:
     config = json.loads((ROOT / "data/config.json").read_text(encoding="utf-8"))
     routes = json.loads((ROOT / "data/routes.json").read_text(encoding="utf-8"))
     settings = json.loads((ROOT / "data/v360.json").read_text(encoding="utf-8"))
-    require(config["versao"] == routes["version"] == settings["version"] == "3.8.5", "versões divergentes")
+    require(config["versao"] == routes["version"] == settings["version"] == "3.8.6", "versões divergentes")
     modules = ["routineBuilder", "bulkCalculator", "preferenceCenter", "smartRefill", "storeMode",
                "afterPurchase", "loyaltyClub", "dynamicKits", "giftFinder", "commercialOpportunities"]
     require(set(modules) == set(settings["modules"]), "lista de módulos divergente")
@@ -40,12 +40,12 @@ def main() -> None:
         require(forbidden not in script and forbidden not in admin, f"construção insegura: {forbidden}")
 
     sw = (ROOT / "service-worker.js").read_text(encoding="utf-8")
-    for token in ("qualimax-v3.8.5", "wellness-hub.html", "data/v360.json", "platform-v360.js", "admin-v360.js"):
+    for token in ("qualimax-v3.8.6", "wellness-hub.html", "data/v360.json", "platform-v360.js", "admin-v360.js"):
         require(token in sw, f"cache incompleto: {token}")
     require("wellness-hub.html" in (ROOT / "sitemap.xml").read_text(encoding="utf-8"), "rota fora do sitemap")
     require("wellness-hub.html" in (ROOT / "index.html").read_text(encoding="utf-8"), "atalho ausente da home")
     require((ROOT / "docs/WELLNESS-HUB-V360.md").exists(), "documentação ausente")
-    print("v3.8.5 OK: dez módulos da Central de Bem-Estar validados")
+    print("v3.8.6 OK: dez módulos da Central de Bem-Estar validados")
 
 
 if __name__ == "__main__":

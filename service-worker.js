@@ -1,4 +1,4 @@
-const CACHE = "qualimax-v3.8.5";
+const CACHE = "qualimax-v3.8.6";
 const OFFLINE_URL = new URL("./offline.html", self.registration.scope).href;
 const SHELL = [
   "./wellness-hub.html", "./data/v360.json", "./assets/styles/platform-v360.css", "./assets/scripts/platform-v360.js", "./assets/scripts/admin-v360.js",

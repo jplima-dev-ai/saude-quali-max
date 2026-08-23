@@ -2,6 +2,20 @@
 
 O histórico segue uma adaptação de Keep a Changelog e versionamento semântico.
 
+## [3.8.6] — 2026-08-23
+
+### Corrigido
+
+- CI do GitHub Actions agora instala explicitamente as dependências Python antes das auditorias, eliminando `ModuleNotFoundError: No module named 'lxml'` em runners Ubuntu limpos;
+- `requirements.txt` adicionado com `lxml==6.1.1`, versão estável compatível com Python 3.12;
+- workflows de Qualidade, GitHub Pages e Release usam a mesma instalação Python reproduzível, evitando que a correção exista em apenas uma pipeline;
+- cache de `pip` habilitado nos workflows para reduzir reinstalações sem esconder dependências;
+- documentação de publicação registra a configuração única do ambiente `github-pages` para permitir a branch `main`.
+
+### Atualizado
+
+- versionamento, cache PWA, métricas, documentação e contratos sincronizados para 3.8.6.
+
 ## [3.8.5] — 2026-08-23
 
 ### Corrigido

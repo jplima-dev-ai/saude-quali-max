@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Regression contracts for the GitHub-ready 3.8.5 release."""
+"""Regression contracts for the GitHub-ready 3.8.6 release."""
 from __future__ import annotations
 
 import json
@@ -20,7 +20,7 @@ routes = json.loads((ROOT / "data/routes.json").read_text(encoding="utf-8"))
 package = json.loads((ROOT / "package.json").read_text(encoding="utf-8"))
 worker = (ROOT / "service-worker.js").read_text(encoding="utf-8")
 readme = (ROOT / "README.md").read_text(encoding="utf-8")
-version = "3.8.5"
+version = "3.8.6"
 
 require(config.get("versao") == routes.get("version") == package.get("version") == version, "versões divergentes")
 require(f"qualimax-v{version}" in worker, "cache desatualizado")
@@ -49,6 +49,6 @@ for workflow in ("quality.yml", "pages.yml"):
     require("permissions:" in text, f"permissões explícitas ausentes: {workflow}")
 
 if errors:
-    print("v3.8.5 FAILED\n" + "\n".join(errors))
+    print("v3.8.6 FAILED\n" + "\n".join(errors))
     sys.exit(1)
-print("v3.8.5 OK: GitHub, Pages, CI, documentação e 81 páginas validados")
+print("v3.8.6 OK: GitHub, Pages, CI, documentação e 81 páginas validados")

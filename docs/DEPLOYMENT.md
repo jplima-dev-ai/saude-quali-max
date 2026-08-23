@@ -16,7 +16,7 @@ Procedimento de release para GitHub Pages, Netlify ou entrega white-label. Execu
 git status
 git diff --check
 git add .
-git commit -m "release: Saúde Qualimax v3.8.5"
+git commit -m "release: Saúde Qualimax v3.8.6"
 git push
 ```
 
@@ -33,3 +33,7 @@ Use `npm run build`, publique `_site/` e preserve `_headers` para os cabeçalhos
 ## Pós-deploy
 
 Teste `index.html`, `catalog.html`, uma página de `products/`, `cart.html`, `campaigns.html`, `account.html`, `support.html`, o Max, `admin.html`, `404.html`, `sitemap.xml`, `manifest.webmanifest` e `service-worker.js`. Confirme HTTPS e console sem erros.
+
+## Configuração única do GitHub Pages
+
+O workflow publica a partir da branch `main`. No GitHub, confirme uma única vez em **Settings → Environments → github-pages** que as regras de implantação permitem `main`; em **Settings → Pages**, use **GitHub Actions** como fonte. Essa permissão pertence às configurações do repositório e não pode ser imposta pelo código-fonte.

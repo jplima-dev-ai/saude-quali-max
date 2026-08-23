@@ -9,5 +9,5 @@ for page in pages:
 chat=(root/"assets/scripts/chatbot.js").read_text(encoding="utf-8")
 for feature in ("transferirParaWhatsApp","MaxHandoff?.evaluate","MaxHandoff?.unresolved","Nada será enviado automaticamente","qualimax:max-handoff"):
  assert feature in chat,feature
-assert json.loads((root/"data/config.json").read_text(encoding="utf-8"))["versao"]=="3.8.5"
-print(f"v3.8.5 OK: transferência integrada em {len(pages)} páginas")
+assert json.loads((root/"data/config.json").read_text(encoding="utf-8"))["versao"]=="3.8.6"
+print(f"v3.8.6 OK: transferência integrada em {len(pages)} páginas")

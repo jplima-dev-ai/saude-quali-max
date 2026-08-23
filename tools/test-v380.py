@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Portfolio, social metadata, metrics and release contracts for 3.8.5."""
+"""Portfolio, social metadata, metrics and release contracts for 3.8.6."""
 from __future__ import annotations
 
 import json
@@ -21,8 +21,8 @@ package = json.loads((ROOT / "package.json").read_text(encoding="utf-8"))
 metrics = json.loads((ROOT / "docs/project-metrics.json").read_text(encoding="utf-8"))
 worker = (ROOT / "service-worker.js").read_text(encoding="utf-8")
 
-require(config.get("versao") == routes.get("version") == package.get("version") == metrics.get("version") == "3.8.5", "versões divergentes")
-require("qualimax-v3.8.5" in worker, "cache desatualizado")
+require(config.get("versao") == routes.get("version") == package.get("version") == metrics.get("version") == "3.8.6", "versões divergentes")
+require("qualimax-v3.8.6" in worker, "cache desatualizado")
 social = ROOT / str(config.get("seo", {}).get("socialImage", ""))
 require(social.is_file() and social.stat().st_size < 100_000, "imagem social ausente ou pesada")
 for page in ("index.html", "catalog.html", "quiz.html", "about.html", "contact.html"):
@@ -62,6 +62,6 @@ require(admin.index("const auditar=async") < admin.index("window.QualimaxAdminAP
 require(metrics.get("pages", {}).get("total") == 81 and metrics.get("quality", {}).get("browserCases") == 42, "métricas incorretas")
 
 if errors:
-    print("v3.8.5 FAILED\n" + "\n".join(errors))
+    print("v3.8.6 FAILED\n" + "\n".join(errors))
     sys.exit(1)
-print("v3.8.5 OK: portfólio, métricas, SEO social, PWA e release validados")
+print("v3.8.6 OK: portfólio, métricas, SEO social, PWA e release validados")
