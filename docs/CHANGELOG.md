@@ -14,6 +14,7 @@ O histórico segue uma adaptação de Keep a Changelog e versionamento semântic
 ## [3.8.8] — 2026-08-23
 
 ### Corrigido
+
 - contraste dos rótulos auxiliares (`admin-kicker`) no Admin Studio sem alterar o dourado do cabeçalho escuro;
 - contraste de textos suaves em cabeçalhos e ações em lote do Admin;
 - contraste do seletor de arquivo do logo white-label;
