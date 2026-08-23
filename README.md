@@ -3,7 +3,7 @@
 [![Qualidade](https://github.com/jplima-dev-ai/saude-quali-max/actions/workflows/quality.yml/badge.svg)](https://github.com/jplima-dev-ai/saude-quali-max/actions/workflows/quality.yml)
 [![GitHub Pages](https://github.com/jplima-dev-ai/saude-quali-max/actions/workflows/pages.yml/badge.svg)](https://github.com/jplima-dev-ai/saude-quali-max/actions/workflows/pages.yml)
 
-**Versão 3.8.8 — plataforma estática, acessível e white-label para lojas de produtos naturais.**
+**Versão 3.8.9 — plataforma estática, acessível e white-label para lojas de produtos naturais.**
 
 [Ver demonstração](https://jplima-dev-ai.github.io/saude-quali-max/) · [Portfólio técnico](docs/PORTFOLIO.md) · [Estudo de caso](docs/CASE-STUDY.md) · [Arquitetura](docs/ARCHITECTURE.md) · [Guia de demonstração](docs/DEMO-GUIDE.md)
 

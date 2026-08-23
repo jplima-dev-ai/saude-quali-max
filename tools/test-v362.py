@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Auditoria de responsividade e regressão da versão 3.8.8."""
+"""Auditoria de responsividade e regressão da versão 3.8.9."""
 from collections import Counter
 from pathlib import Path
 import json
@@ -17,8 +17,8 @@ def main():
     require(len(pages) == 81, f"esperadas 81 páginas; encontradas {len(pages)}")
     for page in pages:
         html = page.read_text(encoding="utf-8")
-        require(html.count("responsive-v362.css") == 1, f"CSS 3.8.8 ausente ou duplicado: {page}")
-        require(html.count("responsive-v362.js") == 1, f"JS 3.8.8 ausente ou duplicado: {page}")
+        require(html.count("responsive-v362.css") == 1, f"CSS 3.8.9 ausente ou duplicado: {page}")
+        require(html.count("responsive-v362.js") == 1, f"JS 3.8.9 ausente ou duplicado: {page}")
         require('name="viewport"' in html, f"viewport ausente: {page}")
         ids = re.findall(r'\bid=["\']([^"\']+)', html)
         require(not [x for x, n in Counter(ids).items() if n > 1], f"IDs duplicados: {page}")
@@ -30,7 +30,7 @@ def main():
 
     config = json.loads((ROOT / "data/config.json").read_text(encoding="utf-8"))
     routes = json.loads((ROOT / "data/routes.json").read_text(encoding="utf-8"))
-    require(config["versao"] == routes["version"] == "3.8.8", "versões divergentes")
+    require(config["versao"] == routes["version"] == "3.8.9", "versões divergentes")
     css = (ROOT / "assets/styles/responsive-v362.css").read_text(encoding="utf-8")
     js = (ROOT / "assets/scripts/responsive-v362.js").read_text(encoding="utf-8")
     for token in ("390px", "767px", "1180px", "orientation: landscape", "prefers-reduced-data", "pointer: coarse"):
@@ -39,8 +39,8 @@ def main():
         require(token in js, f"estabilização ausente: {token}")
     require("\\n" not in (ROOT / "assets/styles/main.css").read_text(encoding="utf-8"), "CSS principal contém quebras literais")
     sw = (ROOT / "service-worker.js").read_text(encoding="utf-8")
-    require("qualimax-v3.8.8" in sw and "responsive-v362.css" in sw and "responsive-v362.js" in sw, "cache incompleto")
-    print("v3.8.8 OK: 81 páginas e contratos responsivos validados")
+    require("qualimax-v3.8.9" in sw and "responsive-v362.css" in sw and "responsive-v362.js" in sw, "cache incompleto")
+    print("v3.8.9 OK: 81 páginas e contratos responsivos validados")
 
 if __name__ == "__main__":
     main()

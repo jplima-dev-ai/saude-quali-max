@@ -1,5 +1,5 @@
 {
-  "version": "3.8.8",
+  "version": "3.8.9",
   "pages": {
     "total": 81,
     "core": 21,
@@ -15,7 +15,7 @@
     "jsonFiles": 11
   },
   "quality": {
-    "pythonTests": 58,
+    "pythonTests": 59,
     "nodeTests": 16,
     "audits": 5,
     "browserProjects": 2,

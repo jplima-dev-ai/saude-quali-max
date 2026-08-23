@@ -28,4 +28,4 @@ Registre NVDA separadamente conforme `NVDA-TEST-PLAN.md`; automação não compr
 
 Valide JSON, JavaScript, links, slugs, imagens, CSP, sitemap, cache e ZIP. Não publique erro conhecido em fluxo essencial. Avisos aceitos precisam de impacto e plano de correção.
 
-Na versão 3.8.8, confirme também que imagens WebP continuam decodificáveis, que todas as miniaturas dos produtos existem e que o conjunto de imagens não ultrapassa o limite registrado em `tools/test-v368.py` sem justificativa documental.
+Na versão 3.8.9, confirme também que imagens WebP continuam decodificáveis, que todas as miniaturas dos produtos existem e que o conjunto de imagens não ultrapassa o limite registrado em `tools/test-v368.py` sem justificativa documental.

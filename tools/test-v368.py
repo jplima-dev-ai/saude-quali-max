@@ -1,11 +1,11 @@
-"""Contratos de imagens, desempenho e versão da Saúde Qualimax 3.8.8."""
+"""Contratos de imagens, desempenho e versão da Saúde Qualimax 3.8.9."""
 from html.parser import HTMLParser
 from pathlib import Path
 import json
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = "3.8.8"
+VERSION = "3.8.9"
 errors = []
 
 
@@ -35,7 +35,7 @@ performance = (ROOT / "assets/scripts/performance-v353.js").read_text(encoding="
 sync_client = (ROOT / "tools/sync-client.py").read_text(encoding="utf-8")
 
 require(config.get("versao") == routes.get("version") == wellness.get("version") == VERSION, "versões divergentes")
-require(f'qualimax-v{VERSION}' in worker, "cache sem versão 3.8.8")
+require(f'qualimax-v{VERSION}' in worker, "cache sem versão 3.8.9")
 
 products = json.loads((ROOT / "data/products.json").read_text(encoding="utf-8")).get("produtos", [])
 require(len(products) == 60, "catálogo não contém 60 produtos")
@@ -81,6 +81,6 @@ home = (ROOT / "index.html").read_text(encoding="utf-8")
 require('width="1376" height="768" fetchpriority="high" decoding="async"' in home, "dimensões do hero divergentes")
 
 if errors:
-    print("v3.8.8 FAILED\n" + "\n".join(errors))
+    print("v3.8.9 FAILED\n" + "\n".join(errors))
     sys.exit(1)
-print(f"v3.8.8 OK: 120 WebP, {total_bytes} bytes, 60 produtos e entrega adaptativa validados")
+print(f"v3.8.9 OK: 120 WebP, {total_bytes} bytes, 60 produtos e entrega adaptativa validados")

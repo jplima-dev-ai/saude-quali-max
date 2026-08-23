@@ -7,3 +7,12 @@
 /* v3.8.8 — contraste do seletor de logo no Admin Studio */
 input[data-wl-logo]{color:#173e30!important;background:#fff}
 input[data-wl-logo]::file-selector-button{color:#173e30;background:#edf6f1;border:1px solid #9db7aa;font-weight:800}
+
+/* v3.8.9 — contraste consistente dos seletores de arquivo no White Label Studio */
+input[data-wl-logo],input[data-wl-import]{color:#173e30!important;background:#fff!important}
+input[data-wl-logo]::file-selector-button,input[data-wl-import]::file-selector-button{color:#fff!important;background:#176b4d!important;border:1px solid #0d4532;font-weight:800}
+input[data-wl-logo]::-webkit-file-upload-button,input[data-wl-import]::-webkit-file-upload-button{color:#fff!important;background:#176b4d!important;border:1px solid #0d4532;font-weight:800}
+
+/* v3.8.9 hotfix — ocultação visual acessível dos seletores de arquivo */
+.wl352-file-label input[type="file"]{position:absolute;inline-size:1px;block-size:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0;opacity:1}
+.wl352-file-label:focus-within{outline:3px solid #0d4532;outline-offset:3px}

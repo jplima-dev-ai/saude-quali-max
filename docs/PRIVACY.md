@@ -1,6 +1,6 @@
 # Privacidade e LGPD
 
-## Componentes da versão 3.8.8
+## Componentes da versão 3.8.9
 
 - `privacy.html`: política pública, acessível e responsiva;
 - `data/config.json > privacidade`: dados do controlador e opções white-label;

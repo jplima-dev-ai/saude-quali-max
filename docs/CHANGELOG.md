@@ -2,10 +2,18 @@
 
 O histórico segue uma adaptação de Keep a Changelog e versionamento semântico.
 
-## [3.8.8] — 2026-08-23
+## [3.8.9] — 2026-08-23
 
 ### Corrigido
 
+- contraste dos campos de upload `data-wl-logo` e `data-wl-import` no White Label Studio;
+- cor explícita para o texto/nome do arquivo e para o botão nativo do seletor de arquivo em Chromium;
+- fallback WebKit adicionado para manter o mesmo contraste em implementações compatíveis;
+- teste de regressão matemático adicionando exigência mínima WCAG AA de 4,5:1.
+
+## [3.8.8] — 2026-08-23
+
+### Corrigido
 - contraste dos rótulos auxiliares (`admin-kicker`) no Admin Studio sem alterar o dourado do cabeçalho escuro;
 - contraste de textos suaves em cabeçalhos e ações em lote do Admin;
 - contraste do seletor de arquivo do logo white-label;
