@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Contratos de estabilização responsiva da versão 3.8.6."""
+"""Contratos de estabilização responsiva da versão 3.8.7."""
 from pathlib import Path
 import json
 
@@ -32,10 +32,10 @@ def main() -> None:
     for forbidden in ("innerHTML", "eval(", "new Function"):
         require(forbidden not in js, f"construção insegura: {forbidden}")
 
-    require(json.loads((ROOT / "data/config.json").read_text(encoding="utf-8"))["versao"] == "3.8.6", "config sem versão")
+    require(json.loads((ROOT / "data/config.json").read_text(encoding="utf-8"))["versao"] == "3.8.7", "config sem versão")
     sw = (ROOT / "service-worker.js").read_text(encoding="utf-8")
-    require("qualimax-v3.8.6" in sw and "responsive-v358.css" in sw and "responsive-v358.js" in sw, "cache incompleto")
-    print("v3.8.6 OK: zoom extremo, teclado virtual, tabelas e overflow validados em 81 páginas")
+    require("qualimax-v3.8.7" in sw and "responsive-v358.css" in sw and "responsive-v358.js" in sw, "cache incompleto")
+    print("v3.8.7 OK: zoom extremo, teclado virtual, tabelas e overflow validados em 81 páginas")
 
 
 if __name__ == "__main__":

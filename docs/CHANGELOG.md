@@ -2,7 +2,7 @@
 
 O histórico segue uma adaptação de Keep a Changelog e versionamento semântico.
 
-## [3.8.6] — 2026-08-23
+## [3.8.7] — 2026-08-23
 
 ### Corrigido
 
@@ -14,7 +14,7 @@ O histórico segue uma adaptação de Keep a Changelog e versionamento semântic
 
 ### Atualizado
 
-- versionamento, cache PWA, métricas, documentação e contratos sincronizados para 3.8.6.
+- versionamento, cache PWA, métricas, documentação e contratos sincronizados para 3.8.7.
 
 ## [3.8.5] — 2026-08-23
 

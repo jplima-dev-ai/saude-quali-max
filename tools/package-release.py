@@ -29,12 +29,12 @@ def ignore(directory: str, names: list[str]) -> set[str]:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--output", default=str(ROOT.parent / "saude-qualimax-v3.8.6"))
+    parser.add_argument("--output", default=str(ROOT.parent / "saude-qualimax-v3.8.7"))
     args = parser.parse_args()
     output = Path(args.output).resolve()
     subprocess.run(["python", "tools/audit-client.py"], cwd=ROOT, check=True)
     with tempfile.TemporaryDirectory(prefix="qualimax-release-") as temporary:
-        staging = Path(temporary) / "saude-qualimax-v3.8.6"
+        staging = Path(temporary) / "saude-qualimax-v3.8.7"
         shutil.copytree(ROOT, staging, ignore=ignore)
         archive = shutil.make_archive(str(output), "zip", Path(temporary), staging.name)
     print(archive)

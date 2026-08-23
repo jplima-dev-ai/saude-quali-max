@@ -24,7 +24,7 @@ A plataforma combina 81 páginas estáticas com catálogo JSON, componentes Java
 4. **Acessibilidade como requisito:** semântica, teclado, foco e anúncios entram nos contratos.
 5. **Testes em camadas:** auditorias estruturais rápidas, testes Node/Python e jornadas Playwright.
 
-## Engenharia da versão 3.8.6
+## Engenharia da versão 3.8.7
 
 - GitHub Actions para qualidade e publicação;
 - build público que exclui ferramentas e dependências;

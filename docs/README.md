@@ -1,6 +1,6 @@
 # Documentação da Saúde Qualimax
 
-Documentação técnica e operacional da versão **3.8.6**. Este diretório funciona como manual oficial do projeto: os guias descrevem o estado publicado, enquanto decisões anteriores permanecem no changelog.
+Documentação técnica e operacional da versão **3.8.7**. Este diretório funciona como manual oficial do projeto: os guias descrevem o estado publicado, enquanto decisões anteriores permanecem no changelog.
 
 ## Mapa
 
@@ -15,7 +15,7 @@ Documentação técnica e operacional da versão **3.8.6**. Este diretório func
 | [Releases](RELEASES.md)                               | Tags, ZIP e SHA-256 automáticos                          |
 | [Métricas](project-metrics.json)                      | Números reproduzíveis do repositório                     |
 | [Decisões arquiteturais](adr/README.md)               | Índice dos ADRs                                          |
-| [Evidências 3.8.6](QUALITY-EVIDENCE-V386.md)          | Matriz executada e limitações                            |
+| [Evidências 3.8.7](QUALITY-EVIDENCE-V386.md)          | Matriz executada e limitações                            |
 | [Plano NVDA](NVDA-TEST-PLAN.md)                       | Validação manual por leitor de tela                      |
 | [Configuração](CONFIGURATION.md)                      | Marca, contato, recursos e operação                      |
 | [Catálogo](CATALOG-AND-CONTENT.md)                    | Produtos, preços, imagens e campanhas                    |
@@ -58,7 +58,7 @@ Documentação técnica e operacional da versão **3.8.6**. Este diretório func
 
 ## Estado da documentação
 
-- versão coberta: 3.8.6;
+- versão coberta: 3.8.7;
 - idioma operacional: português do Brasil;
 - nomes técnicos: inglês;
 - público: desenvolvimento, implantação, operação e suporte;
