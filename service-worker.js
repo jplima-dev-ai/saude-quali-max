@@ -1,4 +1,5 @@
-const CACHE = "qualimax-v3.6.4";
+const CACHE = "qualimax-v3.8.5";
+const OFFLINE_URL = new URL("./offline.html", self.registration.scope).href;
 const SHELL = [
   "./wellness-hub.html", "./data/v360.json", "./assets/styles/platform-v360.css", "./assets/scripts/platform-v360.js", "./assets/scripts/admin-v360.js",
   "./assets/styles/responsive-v358.css", "./assets/styles/responsive-v362.css", "./assets/scripts/responsive-v358.js", "./assets/scripts/responsive-v362.js",
@@ -97,7 +98,7 @@ self.addEventListener("fetch", event => {
       } catch {
         const paginaEmCache = await caches.match(event.request, { ignoreSearch: true });
         if (paginaEmCache) return paginaEmCache;
-        const offline = await caches.match("./offline.html");
+        const offline = await cache.match(OFFLINE_URL, { ignoreSearch: true });
         return offline || Response.error();
       }
     }

@@ -1,0 +1,62 @@
+name: Release verificável
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+permissions:
+  contents: read
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    steps:
+      - name: Obter código
+        uses: actions/checkout@v7
+      - name: Configurar Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Configurar Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+          cache: npm
+      - name: Conferir tag e versão
+        shell: bash
+        run: |
+          version="$(node -p "require('./package.json').version")"
+          test "v${version}" = "${GITHUB_REF_NAME}"
+      - name: Instalar dependências
+        run: npm ci
+      - name: Conferir formatação e métricas
+        run: |
+          npm run format:check
+          npm run metrics
+      - name: Executar três rodadas da suíte
+        run: npm run test:release
+      - name: Instalar Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Executar Playwright e Axe
+        run: npm run test:e2e
+      - name: Gerar build e pacote
+        shell: bash
+        run: |
+          npm run build
+          mkdir -p dist
+          version="${GITHUB_REF_NAME#v}"
+          archive="dist/saude-qualimax-v${version}"
+          python tools/package-release.py --output "${archive}"
+          sha256sum "${archive}.zip" > "${archive}.zip.sha256"
+      - name: Criar release
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          version="${GITHUB_REF_NAME#v}"
+          archive="dist/saude-qualimax-v${version}.zip"
+          gh release create "${GITHUB_REF_NAME}" "${archive}" "${archive}.sha256" --verify-tag --generate-notes --title "Saúde Qualimax ${GITHUB_REF_NAME}"

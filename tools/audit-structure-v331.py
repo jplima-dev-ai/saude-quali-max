@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 def main() -> int:
     erros: list[str] = []
     avisos: list[str] = []
-    paginas = sorted(ROOT.rglob("*.html"))
+    paginas = sorted(ROOT.glob("*.html")) + sorted((ROOT / "products").glob("*.html"))
 
     for pagina in paginas:
         relativo = pagina.relative_to(ROOT).as_posix()

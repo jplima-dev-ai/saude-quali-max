@@ -13,6 +13,6 @@ for doc in (root/"docs").glob("*.md"):
         if target.startswith(("http:","https:","#","mailto:")):continue
         path=(doc.parent/target.split("#")[0]).resolve()
         if not path.exists():errors.append(f"{doc.name}: link quebrado {target}")
-if json.loads((root/"data/config.json").read_text(encoding="utf-8"))["versao"]!="3.6.4":errors.append("versão incorreta")
-if errors:print("v3.6.4 FAILED\n"+"\n".join(errors));sys.exit(1)
-print("v3.6.4 OK: página 404 e documentação validadas")
+if json.loads((root/"data/config.json").read_text(encoding="utf-8"))["versao"]!="3.8.5":errors.append("versão incorreta")
+if errors:print("v3.8.5 FAILED\n"+"\n".join(errors));sys.exit(1)
+print("v3.8.5 OK: página 404 e documentação validadas")

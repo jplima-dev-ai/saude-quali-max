@@ -1,22 +1,18 @@
 # Testes e qualidade
 
-## Suíte mínima de release
+## Suíte de release
 
 ```bash
-python3 tools/audit-structure-v331.py
-python3 tools/audit-screenreader-v344.py
-python3 tools/audit-client.py
-python3 tools/test-security.py
-python3 tools/test-commerce.py
-python3 tools/test-v359.py
-node tools/test-max.cjs
-node tools/test-max-nlu.cjs
-node tools/test-max-basket.cjs
-node tools/test-max-decision.cjs
-node tools/test-security-v351.cjs
+npm run format:check
+npm run test:release
+npm run test:e2e
+npm run screenshots
+npm run build
 ```
 
-Para a regressão completa, execute todos os arquivos `tools/test-*.py` e `tools/test-*.cjs`. Um teste visual ignorado por falta de navegador não equivale a aprovação; registre a limitação e realize a matriz manual.
+`tools/run-tests.py` descobre todos os testes históricos Python/Node, valida a sintaxe dos JavaScripts e carrega todos os JSON. `test:release` repete o conjunto três vezes. O Playwright define 42 casos em Chromium desktop e celular, incluindo Axe, PWA, offline, teclado e as 81 páginas. A configuração usa um processo: testes que alteram o estado de rede e o ciclo do service worker não disputam o mesmo servidor entre os projetos desktop e mobile. Um teste de navegador ignorado por falta do executável não equivale a aprovação; registre a limitação e deixe a CI completar a matriz.
+
+As auditorias Axe ativam movimento reduzido antes da navegação e aguardam `networkidle`. Assim, conteúdo assíncrono entra na análise e texto em transição não produz resultado dependente da velocidade do cache.
 
 ## Revisão manual
 
@@ -26,6 +22,10 @@ Para a regressão completa, execute todos os arquivos `tools/test-*.py` e `tools
 - MAX, Admin, exportações, PWA e offline;
 - Compra Guiada, Minha Jornada, Planejador de orçamento e transferência para atendimento humano.
 
+Registre NVDA separadamente conforme `NVDA-TEST-PLAN.md`; automação não comprova a experiência do leitor de tela.
+
 ## Integridade
 
 Valide JSON, JavaScript, links, slugs, imagens, CSP, sitemap, cache e ZIP. Não publique erro conhecido em fluxo essencial. Avisos aceitos precisam de impacto e plano de correção.
+
+Na versão 3.8.5, confirme também que imagens WebP continuam decodificáveis, que todas as miniaturas dos produtos existem e que o conjunto de imagens não ultrapassa o limite registrado em `tools/test-v368.py` sem justificativa documental.

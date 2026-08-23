@@ -10,6 +10,6 @@ for page in pages:
 script=(root/"assets/scripts/screenreader-v344.js").read_text(encoding="utf-8")
 for feature in ("aria-live","aria-atomic","caption","scope=\"col\"","preventScroll","abre em nova janela"):
     assert feature in script,feature
-assert json.loads((root/"data/config.json").read_text(encoding="utf-8"))["versao"]=="3.6.4"
-assert 'qualimax-v3.6.4' in (root/"service-worker.js").read_text(encoding="utf-8")
-print(f"v3.6.4 OK: {len(pages)} páginas com camada para leitores de tela")
+assert json.loads((root/"data/config.json").read_text(encoding="utf-8"))["versao"]=="3.8.5"
+assert 'qualimax-v3.8.5' in (root/"service-worker.js").read_text(encoding="utf-8")
+print(f"v3.8.5 OK: {len(pages)} páginas com camada para leitores de tela")

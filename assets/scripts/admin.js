@@ -2,7 +2,7 @@
 "use strict";
 
 const DB_NAME="qualimax-admin-local-v3";
-const ADMIN_BACKUP_VERSION="3.6.4";
+const ADMIN_BACKUP_VERSION="3.8.5";
 const DB_VERSION=1;
 let dbPromise=null;
 const abrirDB=()=>{
@@ -317,11 +317,6 @@ const validarProduto=p=>{
     return erros;
 };
 
-window.QualimaxAdminAPI={
-    state,renderLista,persistir,marcarDirty,preencherForm,formParaProduto,selecionar,validarProduto,
-    produtoPorId,atualizarMetricas,auditar,clone
-};
-
 const auditar=async()=>{
     const erros=[]; const avisos=[];
     const slugs=new Set();
@@ -342,6 +337,11 @@ const auditar=async()=>{
         if(avisos.length){const ul=document.createElement("ul");avisos.slice(0,6).forEach(x=>{const li=document.createElement("li");li.textContent=x;ul.append(li)});box.append(ul);}
     }
     return {erros,avisos};
+};
+
+window.QualimaxAdminAPI={
+    state,renderLista,persistir,marcarDirty,preencherForm,formParaProduto,selecionar,validarProduto,
+    produtoPorId,atualizarMetricas,auditar,clone
 };
 
 const preencherLoja=()=>{

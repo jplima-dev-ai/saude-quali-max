@@ -1,0 +1,9 @@
+products/
+assets/scripts/
+assets/styles/
+*.html
+data/
+node_modules/
+_site/
+playwright-report/
+test-results/

@@ -1,0 +1,38 @@
+name: Relatar bug
+description: Informe uma falha reproduzível, inclusive de acessibilidade.
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: O que aconteceu?
+      description: Descreva o resultado observado e o esperado.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Como reproduzir?
+      placeholder: Liste página, ações e teclas usadas.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Ambiente
+      placeholder: Windows 11, Firefox 142, NVDA 2026.2, zoom 200%
+    validations:
+      required: true
+  - type: dropdown
+    id: accessibility
+    attributes:
+      label: Afeta acessibilidade?
+      options: [Sim, Não, Não sei]
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidências adicionais
+      description: Não inclua dados pessoais ou credenciais.

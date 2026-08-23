@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Auditoria de conflitos sutis e documentação da versão 3.6.4."""
+"""Auditoria de conflitos sutis e documentação da versão 3.8.5."""
 from collections import Counter
 from pathlib import Path
 import json
@@ -17,7 +17,7 @@ def require(condition: bool, message: str) -> None:
 def main() -> None:
     config = json.loads((ROOT / "data/config.json").read_text(encoding="utf-8"))
     routes = json.loads((ROOT / "data/routes.json").read_text(encoding="utf-8"))
-    require(config["versao"] == routes["version"] == "3.6.4", "versões divergentes")
+    require(config["versao"] == routes["version"] == "3.8.5", "versões divergentes")
 
     sw = (ROOT / "service-worker.js").read_text(encoding="utf-8")
     shell_match = re.search(r"const SHELL = \[(.*?)\];", sw, re.S)
@@ -25,7 +25,7 @@ def main() -> None:
     shell_items = re.findall(r'"([^"]+)"', shell_match.group(1))
     duplicates = [item for item, count in Counter(shell_items).items() if count > 1]
     require(not duplicates, f"assets duplicados no cache: {duplicates}")
-    require("qualimax-v3.6.4" in sw, "cache sem versão 3.6.4")
+    require("qualimax-v3.8.5" in sw, "cache sem versão 3.8.5")
 
     v357 = (ROOT / "assets/scripts/responsive-v357.js").read_text(encoding="utf-8")
     v358 = (ROOT / "assets/scripts/responsive-v358.js").read_text(encoding="utf-8")
@@ -47,7 +47,7 @@ def main() -> None:
     require("qualimax-v3.5.5" not in current_docs, "cache obsoleto documentado")
     require('v3.5.5"' not in current_docs, "release obsoleta documentada")
     require((DOCS / "DOCUMENTATION-STANDARD.md").exists(), "padrão editorial ausente")
-    print("v3.6.4 OK: conflitos sutis e documentação profissional validados")
+    print("v3.8.5 OK: conflitos sutis e documentação profissional validados")
 
 
 if __name__ == "__main__":

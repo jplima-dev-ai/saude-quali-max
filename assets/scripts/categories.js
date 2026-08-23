@@ -10,7 +10,22 @@
             const categorias=Array.isArray(dados.categorias)?dados.categorias:[];
             grid.replaceChildren(...categorias.map((cat)=>{
                 const article=document.createElement("article"); article.className="categoria-card";
-                const img=document.createElement("img"); img.src=`assets/images/${cat.imagem}`; img.alt=`${cat.nome}.`; img.loading="lazy"; img.width=640; img.height=480;
+                const arquivo=String(cat.imagem||"").trim();
+                const seguro=/^[A-Za-z0-9._-]+$/.test(arquivo);
+                const img=document.createElement("img");
+                if(seguro){
+                    img.src=`assets/images/thumbs/${arquivo}`;
+                    img.addEventListener("error",()=>{
+                        if(img.dataset.fallbackAplicado)return;
+                        img.dataset.fallbackAplicado="true";
+                        img.src=`assets/images/${arquivo}`;
+                    });
+                }
+                img.alt=`${cat.nome}.`;
+                img.loading="lazy";
+                img.decoding="async";
+                img.width=464;
+                img.height=576;
                 const div=document.createElement("div"); div.className="categoria-conteudo";
                 const h=document.createElement("h3"); h.textContent=cat.nome;
                 const p=document.createElement("p"); p.textContent=cat.descricao;

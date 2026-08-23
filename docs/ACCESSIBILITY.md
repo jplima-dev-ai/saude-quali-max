@@ -45,6 +45,7 @@ Nenhum fluxo essencial pode depender apenas de mouse, animação ou percepção 
 O sistema em `assets/styles/animations.css` e `assets/scripts/animations.js` deve funcionar com intensidade desligada e `prefers-reduced-motion` ativo.
 
 Automação encontra falhas objetivas, mas não comprova uma experiência perfeita. A aprovação final exige percurso manual com NVDA em modo de navegação e de foco, preferencialmente em Firefox e Chrome.
+
 ## Acessibilidade responsiva
 
 A camada `responsive-v357.css` preserva zoom do navegador, alvos de toque de pelo menos 48 px em telas sensíveis ao toque e leitura sem rolagem lateral do documento. Tabelas largas recebem uma região focável com nome acessível e instrução de rolagem somente quando houver conteúdo oculto horizontalmente.

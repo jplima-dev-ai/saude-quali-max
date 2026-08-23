@@ -86,6 +86,7 @@
     "title": "Saúde Qualimax | Produtos Naturais em Serra - ES",
     "description": "Explore produtos naturais, chás, castanhas, sementes, vitaminas e suplementos na Saúde Qualimax em Serra - ES. Tire dúvidas e consulte disponibilidade pelo WhatsApp.",
     "canonical": "https://jplima-dev-ai.github.io/saude-quali-max/",
+    "socialImage": "assets/images/social-card.webp",
     "paginas": {
       "home": {
         "title": "Saúde Qualimax | Produtos Naturais em Serra - ES",
@@ -225,7 +226,7 @@
       }
     ]
   },
-  "versao": "3.6.4",
+  "versao": "3.8.5",
   "animacoes": {
     "ativo": true,
     "nivel": "suave",

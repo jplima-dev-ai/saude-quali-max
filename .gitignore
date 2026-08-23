@@ -1,0 +1,17 @@
+node_modules/
+.npm-cache/
+.playwright-browsers/
+_site/
+_site-staging/
+playwright-report/
+test-results/
+docs/assets/screenshots/*.png
+!docs/assets/screenshots/README.md
+__pycache__/
+*.pyc
+*.zip
+.DS_Store
+Thumbs.db
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json

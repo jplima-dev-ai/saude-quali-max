@@ -141,7 +141,7 @@
     };
     const fecharDialogo = () => {
         const modal = document.querySelector("[data-escolhas-modal]"); if (!modal) return;
-        modal.hidden = true; modal.setAttribute("aria-hidden", "true"); document.body.classList.remove("modal-aberto"); ultimoFoco?.focus?.(); ultimoFoco = null;
+        modal.hidden = true; modal.setAttribute("aria-hidden", "true"); document.body.classList.remove("modal-aberto"); const focoAnterior=ultimoFoco; ultimoFoco=null; window.requestAnimationFrame(()=>focoAnterior?.focus?.({preventScroll:true}));
     };
 
     const enviarLista = () => {

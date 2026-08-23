@@ -62,7 +62,7 @@ A auditoria ofensiva da v3.1.7 corrigiu quatro classes de problema:
 
 1. **Submissão nativa do pré-atendimento** — o botão final deixou de ser `submit`. Assim, se JavaScript falhar ou estiver desativado, dados pessoais não são serializados automaticamente em uma URL GET.
 2. **URL de retorno do catálogo** — o valor salvo em `sessionStorage` agora é sempre relativo e validado estritamente antes de virar `href`.
-3. **Clickjacking** — Netlify recebe proteção HTTP por `_headers` com `frame-ancestors 'none'` e `X-Frame-Options: DENY`. No GitHub Pages, que não permite controlar esses cabeçalhos pelo repositório, `frame-guard.js` permanece como defesa client-side e carrega cedo nas páginas utilitárias.
+3. **Clickjacking** — Netlify recebe proteção HTTP por `_headers` com `frame-ancestors 'none'` e `X-Frame-Options: DENY`. A diretiva não é incluída em metatags porque navegadores a ignoram nesse formato. No GitHub Pages, que não permite controlar esses cabeçalhos pelo repositório, `frame-guard.js` permanece como defesa client-side e carrega cedo nas páginas utilitárias.
 4. **Backup malicioso/DoS local** — importações do Admin Studio têm limites de tamanho, quantidade de produtos/imagens e tamanho dos data URLs antes da decodificação.
 
 Execute também:

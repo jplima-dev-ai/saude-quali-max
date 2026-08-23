@@ -9,11 +9,11 @@
 
 ## Estratégia
 
-O shell essencial é pré-armazenado. Navegações usam o conteúdo disponível e recorrem ao fallback sem rede.
+O shell essencial é pré-armazenado. Navegações usam o conteúdo disponível e recorrem ao fallback sem rede. A URL de `offline.html` é resolvida a partir do escopo do service worker, mantendo o comportamento tanto na raiz quanto no subdiretório do GitHub Pages.
 
 ## Atualização
 
-Cada versão deve renovar o identificador do cache e listar os novos recursos essenciais. Na versão atual, confirme `qualimax-v3.6.4` em `service-worker.js`; nunca reutilize o identificador de uma versão anterior.
+Cada versão deve renovar o identificador do cache e listar os novos recursos essenciais. Na versão atual, confirme `qualimax-v3.8.5` em `service-worker.js`; nunca reutilize o identificador de uma versão anterior.
 
 ## Verificação de release
 
@@ -21,6 +21,7 @@ Cada versão deve renovar o identificador do cache e listar os novos recursos es
 2. Incremente o nome do cache.
 3. Teste primeira visita, atualização e navegação offline.
 4. Verifique se uma falha de rede conduz a `offline.html` sem ciclo de recarga.
+5. Antes de desligar a rede na automação, confirme que `offline.html` já está presente no Cache Storage.
 
 ## Verificação
 

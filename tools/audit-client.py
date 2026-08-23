@@ -76,7 +76,9 @@ def main() -> int:
             erros.append(f"Miniatura ausente: assets/images/thumbs/{imagem}")
 
     # HTML: referências locais, IDs, H1 e CSP.
-    paginas = list(ROOT.rglob("*.html"))
+    # Dependências e artefatos de build também podem conter HTML interno.
+    # A auditoria pública cobre somente as rotas mantidas pelo projeto.
+    paginas = list(ROOT.glob("*.html")) + list((ROOT / "products").glob("*.html"))
     for page in paginas:
         texto = page.read_text(encoding="utf-8")
 
@@ -112,6 +114,8 @@ def main() -> int:
             erros.append(f"CSP ausente em {page.relative_to(ROOT)}")
         else:
             policy = meta.group(1)
+            if "frame-ancestors" in policy:
+                erros.append(f"frame-ancestors inválido em meta CSP: {page.relative_to(ROOT)}")
             for script in re.finditer(r'<script\b([^>]*)>(.*?)</script>', texto, re.I | re.S):
                 if "src=" in script.group(1).lower() or not script.group(2).strip():
                     continue
@@ -153,7 +157,7 @@ def main() -> int:
 
     # Admin Studio: backup deve acompanhar a release atual.
     admin_js = (ROOT / "assets" / "scripts" / "admin.js").read_text(encoding="utf-8")
-    if 'ADMIN_BACKUP_VERSION="3.6.4"' not in admin_js:
+    if 'ADMIN_BACKUP_VERSION="3.8.5"' not in admin_js:
         erros.append("Admin Studio está exportando backup com versão obsoleta.")
 
     # Segurança de jornada e deploy.

@@ -1,0 +1,27 @@
+{
+  "name": "saude-qualimax",
+  "version": "3.8.5",
+  "private": true,
+  "description": "Plataforma estática, acessível e white-label para lojas de produtos naturais.",
+  "scripts": {
+    "dev": "python tools/serve.py",
+    "build": "python tools/build-pages.py",
+    "test": "python tools/run-tests.py --rounds 1",
+    "test:release": "python tools/run-tests.py --rounds 3",
+    "test:e2e": "playwright test",
+    "test:e2e:install": "playwright install chromium",
+    "screenshots": "playwright test --config playwright.screenshots.config.js",
+    "metrics": "python tools/audit-metrics-v380.py",
+    "metrics:write": "python tools/audit-metrics-v380.py --write",
+    "format": "prettier --write README.md docs .github tests/e2e tests/visual playwright.config.js playwright.screenshots.config.js package.json",
+    "format:check": "prettier --check README.md docs .github tests/e2e tests/visual playwright.config.js playwright.screenshots.config.js package.json"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.13.0",
+    "@playwright/test": "1.62.1",
+    "prettier": "3.9.6"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

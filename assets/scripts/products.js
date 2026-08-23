@@ -330,7 +330,11 @@
         imagemWrap.className = "produto-modal-imagem";
         const imagem = document.createElement("img");
         const arquivoImagem = nomeArquivoSeguro(produto.imagem);
-        if (arquivoImagem) imagem.src = `assets/images/${arquivoImagem}`;
+        if (arquivoImagem) {
+            imagem.src = `assets/images/${arquivoImagem}`;
+            imagem.srcset = `assets/images/thumbs/${arquivoImagem} 1x, assets/images/${arquivoImagem} 2x`;
+            imagem.sizes = "(max-width: 767px) 92vw, 42vw";
+        }
         imagem.alt = `${produto.nome} — ${categoriaNome(produto.categoria)}.`;
         imagem.decoding = "async";
         imagem.width = 928;
@@ -451,8 +455,9 @@
         modal.hidden = true;
         modal.setAttribute("aria-hidden", "true");
         document.body.classList.remove("modal-aberto");
-        ultimoFoco?.focus?.();
+        const focoAnterior = ultimoFoco;
         ultimoFoco = null;
+        window.requestAnimationFrame(() => focoAnterior?.focus?.({ preventScroll: true }));
     };
 
     window.QualimaxProdutos = { abrirModal, fecharModal, obterTodos: () => [...estado.produtos], relacionados };

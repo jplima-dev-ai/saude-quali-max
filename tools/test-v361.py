@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Auditoria integral e contratos do avatar Max 3.6.4."""
+"""Auditoria integral e contratos do avatar Max 3.8.5."""
 from collections import Counter
 from pathlib import Path
 import json
@@ -33,17 +33,17 @@ def main() -> None:
 
     config = json.loads((ROOT / "data/config.json").read_text(encoding="utf-8"))
     routes = json.loads((ROOT / "data/routes.json").read_text(encoding="utf-8"))
-    require(config["versao"] == routes["version"] == "3.6.4", "versões divergentes")
+    require(config["versao"] == routes["version"] == "3.8.5", "versões divergentes")
     require(config["chatbot"]["avatar"] == "assets/images/max-lion-avatar-v361.webp", "avatar principal incorreto")
     require(config["chatbot"]["avatarButton"] == "assets/images/max-lion-avatar-v361-128.webp", "avatar leve incorreto")
     require((ROOT / config["chatbot"]["avatar"]).stat().st_size < 180_000, "avatar principal pesado")
     require((ROOT / config["chatbot"]["avatarButton"]).stat().st_size < 30_000, "avatar do botão pesado")
 
     sw = (ROOT / "service-worker.js").read_text(encoding="utf-8")
-    require("qualimax-v3.6.4" in sw, "cache desatualizado")
+    require("qualimax-v3.8.5" in sw, "cache desatualizado")
     require("max-lion-avatar-v361.webp" in sw and "max-lion-avatar-v361-128.webp" in sw, "avatares fora do cache")
     require("max-avatar-v333.svg" not in sw, "avatar obsoleto no cache")
-    print("v3.6.4 OK: 81 páginas, links, assets e avatar do Max validados")
+    print("v3.8.5 OK: 81 páginas, links, assets e avatar do Max validados")
 
 
 if __name__ == "__main__":

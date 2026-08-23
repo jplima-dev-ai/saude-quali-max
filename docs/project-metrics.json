@@ -1,0 +1,29 @@
+{
+  "version": "3.8.5",
+  "pages": {
+    "total": 81,
+    "core": 21,
+    "products": 60
+  },
+  "catalog": {
+    "products": 60,
+    "categories": 14
+  },
+  "source": {
+    "javascriptModules": 53,
+    "stylesheets": 18,
+    "jsonFiles": 11
+  },
+  "quality": {
+    "pythonTests": 55,
+    "nodeTests": 16,
+    "audits": 5,
+    "browserProjects": 2,
+    "browserCases": 42,
+    "screenshotScenarios": 5
+  },
+  "images": {
+    "webpFiles": 120,
+    "webpBytes": 5241930
+  }
+}

@@ -1,0 +1,23 @@
+name: Sugerir melhoria
+description: Proponha uma melhoria alinhada ao escopo da plataforma.
+title: "[Melhoria]: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: need
+    attributes:
+      label: Qual necessidade seria resolvida?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Solução sugerida
+    validations:
+      required: true
+  - type: textarea
+    id: accessibility
+    attributes:
+      label: Impacto em acessibilidade, privacidade e desempenho
+    validations:
+      required: true

@@ -32,7 +32,7 @@ Nunca reutilize credenciais, dados pessoais, analytics ou IDs privados. Um pacot
 python3 tools/generate-store.py
 python3 tools/sync-client.py --check
 python3 tools/audit-client.py
-python3 tools/package-release.py --saida ../nome-do-cliente-versao
+python tools/package-release.py --output ../nome-do-cliente-versao
 ```
 
 Autenticação, pedidos reais, estoque central, pagamento e equipe multiusuário exigem backend.

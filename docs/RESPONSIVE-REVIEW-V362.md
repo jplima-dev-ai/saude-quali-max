@@ -6,16 +6,16 @@ A revisão abrange as 80 páginas HTML, incluindo catálogo, 60 produtos, checko
 
 ## Matriz de adaptação
 
-| Contexto | Tratamento principal |
-|---|---|
-| Até 390 px | uma coluna, tipografia fluida, controles largos e composição compacta |
-| 391 a 767 px | fluxo móvel, formulários sem zoom automático e diálogos limitados à viewport |
-| 768 a 1180 px | grades de duas colunas e densidade confortável para tablets |
-| Acima de 1180 px | composição ampla original preservada |
-| Paisagem com pouca altura | elementos fixos liberados e diálogos em altura integral |
-| Teclado virtual aberto | acionadores flutuantes ocultados para não cobrir campos |
-| Zoom elevado | conteúdo reorganizado sem rolagem horizontal global |
-| Preferência por dados reduzidos | decorações e transições dispensáveis removidas |
+| Contexto                        | Tratamento principal                                                         |
+| ------------------------------- | ---------------------------------------------------------------------------- |
+| Até 390 px                      | uma coluna, tipografia fluida, controles largos e composição compacta        |
+| 391 a 767 px                    | fluxo móvel, formulários sem zoom automático e diálogos limitados à viewport |
+| 768 a 1180 px                   | grades de duas colunas e densidade confortável para tablets                  |
+| Acima de 1180 px                | composição ampla original preservada                                         |
+| Paisagem com pouca altura       | elementos fixos liberados e diálogos em altura integral                      |
+| Teclado virtual aberto          | acionadores flutuantes ocultados para não cobrir campos                      |
+| Zoom elevado                    | conteúdo reorganizado sem rolagem horizontal global                          |
+| Preferência por dados reduzidos | decorações e transições dispensáveis removidas                               |
 
 ## Bugs corrigidos
 

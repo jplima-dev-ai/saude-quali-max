@@ -2237,8 +2237,9 @@
             transferirParaWhatsApp(MaxHandoff?.evaluate?.("falha ao carregar catálogo",{catalogReady:false})||{id:"technical",message:"Não consegui carregar o catálogo agora.",button:"Continuar com a equipe",subject:"Falha ao consultar o catálogo"});
         }
 
-        const abrir = () => {
-            estado.ultimoFoco = document.activeElement;
+        const abrir = (evento) => {
+            estado.ultimoFoco = evento?.currentTarget instanceof HTMLElement
+                ? evento.currentTarget : document.activeElement;
             widget.hidden = false;
             widget.setAttribute("aria-hidden", "false");
             document.body.classList.add("chat-aberto");
@@ -2252,7 +2253,9 @@
             const fallback = document.querySelector("[data-chat-abrir]");
             const alvo = estado.ultimoFoco instanceof HTMLElement && document.contains(estado.ultimoFoco)
                 ? estado.ultimoFoco : fallback;
-            alvo?.focus();
+            // A camada de acessibilidade remove `inert` em um MutationObserver.
+            // O próximo frame garante que o acionador já possa receber foco.
+            window.requestAnimationFrame(() => alvo?.focus({ preventScroll: true }));
         };
 
         document.querySelectorAll("[data-chat-abrir]").forEach((botao) => botao.addEventListener("click", abrir));

@@ -2,6 +2,145 @@
 
 O histórico segue uma adaptação de Keep a Changelog e versionamento semântico.
 
+## [3.8.5] — 2026-08-23
+
+### Corrigido
+
+- contraste do texto do rodapé compacto da Central de Bem-Estar: `#e8f3ed` sobre `#082f23`, corrigindo a violação séria `color-contrast` apontada pelo Axe;
+- correção aplicada por seletor específico `.rodape > .container > p`, sem alterar a cor global dos parágrafos nem mascarar a regra WCAG 1.4.3;
+- regressão automatizada adicionada para impedir o retorno do contraste insuficiente no rodapé.
+
+### Atualizado
+
+- versionamento, cache PWA, documentação, métricas e contratos sincronizados para 3.8.5.
+
+## [3.8.4] — 2026-08-23
+
+### Corrigido
+
+- contraste dos parágrafos do hero da Central de Bem-Estar (`wellness-hub.html`), elevando a combinação de texto/fundo acima do mínimo WCAG 2.1 AA para texto normal;
+- regressão automatizada para impedir retorno do contraste insuficiente no hero da Central de Bem-Estar.
+
+### Atualizado
+
+- versionamento, cache PWA, documentação e contratos sincronizados para 3.8.4.
+
+## [3.8.3] — 2026-08-23
+
+### Estabilidade da suíte Playwright
+
+- execução Playwright alterada para `fullyParallel: false`, evitando paralelismo total em uma suíte com PWA, service worker e projetos desktop/mobile;
+- `workers: 1` preservado para manter isolamento de estado entre os testes;
+- uma repetição local adicionada (`retries: 1`) e duas no CI, reduzindo falsos negativos por encerramentos transitórios do Chromium sem ocultar falhas persistentes;
+- rastros e screenshots de falha preservados para diagnóstico;
+- nenhuma regra Axe, asserção de overflow ou requisito de acessibilidade foi removido;
+- versionamento, cache PWA, documentação e contratos sincronizados para 3.8.3.
+
+## [3.8.2] — 2026-08-23
+
+### Correção ARIA no catálogo
+
+- removido `aria-label` proibido da `div.filtros-ativos`, corrigindo a violação séria `aria-prohibited-attr` apontada pelo Axe em `catalog.html`;
+- mantida a semântica nativa do contêiner sem adicionar `role` artificial apenas para satisfazer a auditoria;
+- versão sincronizada em pacote, configuração, rotas, métricas, cache PWA, Admin Studio, testes e documentação;
+- cache do service worker renovado para `qualimax-v3.8.2`;
+- teste de regressão 3.8.2 adicionado para impedir o retorno do atributo ARIA inválido;
+- pacote de release mantido limpo de dependências e artefatos locais.
+
+## [3.8.1] — 2026-08-23
+
+### Patch de acessibilidade e release
+
+- contraste do parágrafo do CTA final corrigido com cor branca explícita, eliminando a violação séria `color-contrast` detectada pelo Axe;
+- versão sincronizada em pacote, configuração, rotas, métricas, cache PWA, Admin Studio, testes e documentação;
+- cache do service worker renovado para `qualimax-v3.8.1`, evitando reutilização indevida da release anterior;
+- empacotador de release atualizado para gerar `saude-qualimax-v3.8.1.zip`;
+- distribuição limpa de `node_modules`, `test-results`, relatórios e caches locais;
+- evidências e documentação de qualidade atualizadas para a manutenção 3.8.1.
+
+## [3.8.0] — 2026-08-23
+
+### Portfólio verificável e qualidade em navegador
+
+- apresentação técnica ampliada com narrativa STAR, matriz de competências e tópicos para entrevista;
+- métricas do repositório geradas e verificadas automaticamente, eliminando números promocionais desatualizados;
+- três ADRs registram as decisões de arquitetura estática, acessibilidade e white-label orientado por dados;
+- testes Playwright ampliados de 30 para 42 casos, cobrindo as 81 páginas, menu móvel, preferências de acessibilidade, PWA, offline e console;
+- fallback offline estabilizado com URL derivada do escopo do service worker e teste de regressão que confirma o recurso no cache antes de cortar a rede;
+- execução do Playwright serializada em um processo após regressão reproduzida no Windows, evitando disputa de estado de rede e service workers entre os projetos desktop e mobile;
+- `frame-ancestors` removido de quatro metatags CSP, eliminando erros de console; a proteção válida permanece no cabeçalho `_headers` e no `frame-guard.js`;
+- auditoria de regressão adicionada para impedir o retorno de diretivas `frame-ancestors` inválidas no HTML;
+- retorno de foco corrigido no Max, no diálogo de produto e no diálogo de escolhas: o foco agora aguarda a remoção de `inert` antes de voltar ao acionador;
+- acionador exato do Max preservado por evento e teste Playwright estabilizado no botão flutuante identificável;
+- Admin Studio corrigido para inicializar `auditar` antes de exportá-lo na API pública, eliminando `ReferenceError` em tempo de execução;
+- regressões estrutural e de execução isolada adicionadas para validar a ordem de inicialização da API administrativa;
+- contraste do copyright do rodapé elevado de aproximadamente 4,12:1 para mais de 4,5:1, corrigindo violação séria do Axe na página inicial;
+- título e botão do cabeçalho claro do Max receberam cores escuras explícitas, evitando herança de texto branco;
+- teste numérico de regressão adicionado para contraste de texto pequeno;
+- auditorias Axe estabilizadas com movimento reduzido e espera por `networkidle`, evitando captura de texto durante transições ou antes da renderização dinâmica;
+- relatório compacto de seletores e causas adicionado às falhas Axe para diagnóstico objetivo;
+- automação reproduzível para cinco capturas em desktop e celular;
+- imagem social white-label de 1200 × 630 pixels e metadados Open Graph/Twitter nas páginas principais;
+- campo de imagem social incorporado ao White-label Studio com validação de caminho;
+- workflow de release por tag com três rodadas, Chromium, ZIP, SHA-256 e notas automáticas;
+- Dependabot e CODEOWNERS adicionados para manutenção profissional;
+- configuração, rotas, cache, Admin Studio, White-label Studio, documentação e exportações atualizados para 3.8.0.
+
+## [3.7.1] — 2026-08-23
+
+### Limpeza segura e prevenção de resíduos
+
+- nova cópia de trabalho criada sem `node_modules`, caches do npm/Playwright, `_site` ou relatórios temporários;
+- SVG redundante da capa removido, preservando o PNG utilizado no README;
+- documento isolado de arquitetura internacional consolidado em `ARCHITECTURE.md` e removido;
+- gerador white-label corrigido para não copiar dependências, caches, builds, relatórios ou ZIPs;
+- gerador white-label passa a reutilizar o interpretador Python atual, melhorando a compatibilidade no Windows;
+- comando obsoleto de empacotamento corrigido na documentação white-label;
+- auditoria automática adicionada para detectar assets, dados e documentos sem referência;
+- configuração, rotas, cache, Admin Studio, White-label Studio e exportações atualizados para 3.7.1.
+
+## [3.7.0] — 2026-08-23
+
+### Portfólio profissional e entrega GitHub
+
+- README reestruturado como apresentação técnica e estudo de caso para recrutadores;
+- comandos unificados para desenvolvimento, testes, navegador, release e build;
+- GitHub Actions para qualidade contínua e publicação automática no Pages;
+- build público determinístico, sem ferramentas, relatórios ou dependências de desenvolvimento;
+- testes Playwright em Chromium desktop e celular, com auditorias Axe nas jornadas principais;
+- plano manual de NVDA com estado de execução explícito;
+- templates de issue e pull request, regras de contribuição, código de conduta e licença de portfólio;
+- documentação de demonstração, módulos ativos, publicação e evidências de qualidade;
+- páginas de produto identificadas como arquivos gerados, com fonte oficial no catálogo JSON;
+- configuração, rotas, cache, Admin Studio, White-label Studio e exportações atualizados para 3.7.0.
+
+## [3.6.8] — 2026-08-22
+
+### Imagens otimizadas e recursos existentes aprimorados
+
+- recodificação conservadora das imagens WebP, preservando nomes, dimensões, rotas e textos alternativos;
+- redução do conjunto WebP de aproximadamente 40,6 MB para 5,2 MB;
+- fontes responsivas com miniatura e imagem completa nas páginas individuais e no modal do catálogo;
+- categorias do catálogo passam a carregar miniaturas, com retorno seguro à imagem completa quando necessário;
+- modo leve corrigido para reconhecer imagens em páginas dentro de `products/`, remover `srcset` e forçar a miniatura em conexões econômicas;
+- sincronizador corrigido para preservar as camadas 3.6.2 e 3.6.3 nas páginas de produto e manter Privacidade e Central de Bem-Estar no sitemap;
+- dimensão intrínseca do hero inicial corrigida para reduzir deslocamento de layout;
+- configuração, rotas, cache, Admin Studio, White-label Studio e exportações atualizados para 3.6.8;
+- teste de regressão 3.6.8 adicionado para peso, integridade, entrega responsiva e contratos de versão.
+
+## [3.6.7] — 2026-08-22
+
+### Estabilização integral e testes repetidos
+
+- revisão das 81 páginas, links, âncoras, recursos, dados, scripts, cache, rotas, sitemap e metadados;
+- correção da URL canônica e do Open Graph da Central de Bem-Estar, antes divergentes do domínio configurado;
+- correção do nome do arquivo exportado pelo painel de animações, que ainda indicava a versão 3.3.4;
+- validação de IDs, rótulos, referências ARIA, textos alternativos e estrutura dos documentos;
+- verificação da correspondência entre os 60 produtos, suas páginas e seus recursos;
+- conferência dos hashes de scripts permitidos pela Política de Segurança de Conteúdo;
+- nova suíte 3.6.7 para impedir regressão dos bugs corrigidos;
+- suíte integral executada repetidamente, incluindo os contratos comportamentais do Max.
+
 ## [3.6.4] — 2026-08-22
 
 ### Limpeza auditada do projeto
