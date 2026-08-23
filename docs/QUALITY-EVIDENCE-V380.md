@@ -1,4 +1,4 @@
-# Evidências de qualidade — versão 3.8.7
+# Evidências de qualidade — versão 3.8.8
 
 Esta matriz registra a validação automatizada disponível. A evidência anterior permanece em [`QUALITY-EVIDENCE-V371.md`](QUALITY-EVIDENCE-V371.md).
 

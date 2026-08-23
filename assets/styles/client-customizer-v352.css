@@ -3,3 +3,7 @@
 @media(max-width:680px){.wl352-group,.wl352-features{grid-template-columns:1fr}.wl352-group h3,.wl352-wide{grid-column:1}.wl352-actions{display:grid}.wl352-actions>*{width:100%}.wl352-presets button,.wl352-steps button{width:100%}}
 @media(prefers-reduced-motion:reduce){.wl352-shell *{scroll-behavior:auto!important;transition:none!important}}
 .wl352-preview-header{display:flex;gap:.8rem;align-items:center}.wl352-preview-header img{width:72px;height:44px;object-fit:contain;border-radius:8px;background:#fff;padding:.25rem}
+
+/* v3.8.8 — contraste do seletor de logo no Admin Studio */
+input[data-wl-logo]{color:#173e30!important;background:#fff}
+input[data-wl-logo]::file-selector-button{color:#173e30;background:#edf6f1;border:1px solid #9db7aa;font-weight:800}

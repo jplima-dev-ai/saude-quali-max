@@ -1,6 +1,6 @@
-# Evidência de Qualidade — v3.8.7
+# Evidência de Qualidade — v3.8.8
 
-A versão 3.8.7 reforça a reprodutibilidade do GitHub Actions e torna explícita a validação da dependência Python usada pelas auditorias de acessibilidade.
+A versão 3.8.8 reforça a reprodutibilidade do GitHub Actions e torna explícita a validação da dependência Python usada pelas auditorias de acessibilidade.
 
 ## Alterações verificáveis
 

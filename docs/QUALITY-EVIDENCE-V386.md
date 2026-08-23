@@ -1,6 +1,6 @@
-# Evidência de qualidade — v3.8.7
+# Evidência de qualidade — v3.8.8
 
-A manutenção 3.8.7 corrige a diferença entre o ambiente local e runners limpos do GitHub Actions. Os testes Python usam `lxml`, portanto a dependência agora é declarada e instalada de forma reproduzível.
+A manutenção 3.8.8 corrige a diferença entre o ambiente local e runners limpos do GitHub Actions. Os testes Python usam `lxml`, portanto a dependência agora é declarada e instalada de forma reproduzível.
 
 ## Mudanças verificáveis
 

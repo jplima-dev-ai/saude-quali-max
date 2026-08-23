@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Audita a limpeza estrutural da versão 3.8.7."""
+"""Audita a limpeza estrutural da versão 3.8.8."""
 from pathlib import Path
 import json
 import re
@@ -37,13 +37,13 @@ def main():
 
     config = json.loads((ROOT / "data/config.json").read_text(encoding="utf-8"))
     routes = json.loads((ROOT / "data/routes.json").read_text(encoding="utf-8"))
-    require(config["versao"] == routes["version"] == "3.8.7", "versões divergentes")
+    require(config["versao"] == routes["version"] == "3.8.8", "versões divergentes")
     sw = (ROOT / "service-worker.js").read_text(encoding="utf-8")
-    require("qualimax-v3.8.7" in sw, "cache desatualizado")
+    require("qualimax-v3.8.8" in sw, "cache desatualizado")
     for relative in REMOVED:
         require(Path(relative).name not in sw, f"cache referencia arquivo removido: {relative}")
     require((ROOT / "docs/PROJECT-CLEANUP-V364.md").exists(), "relatório de limpeza ausente")
-    print("v3.8.7 OK: 33 arquivos obsoletos removidos e 81 páginas validadas")
+    print("v3.8.8 OK: 33 arquivos obsoletos removidos e 81 páginas validadas")
 
 if __name__ == "__main__":
     main()

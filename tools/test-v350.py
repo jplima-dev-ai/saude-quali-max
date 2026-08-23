@@ -10,13 +10,13 @@ config=json.loads((root/"data/config.json").read_text(encoding="utf-8"))
 routes=json.loads((root/"data/routes.json").read_text(encoding="utf-8"))
 sw=(root/"service-worker.js").read_text(encoding="utf-8")
 
-assert config["versao"]=="3.8.7"
-assert routes["version"]=="3.8.7"
+assert config["versao"]=="3.8.8"
+assert routes["version"]=="3.8.8"
 assert "admin-products-v350.css" in admin and "admin-products-v350.js" in admin
 for marker in ("data-v350-filtro-categoria","data-v350-aplicar-reajuste","data-v350-exportar-csv","data-v350-quality-value"):
     assert marker in admin, marker
 for marker in ("filtrarOrdenar","price-adjustment","downloadCSV","qualidade"):
     assert marker in script, marker
 assert "prefers-reduced-motion" in style
-assert "admin-products-v350.js" in sw and "qualimax-v3.8.7" in sw
-print("v3.8.7 OK: central profissional de produtos integrada")
+assert "admin-products-v350.js" in sw and "qualimax-v3.8.8" in sw
+print("v3.8.8 OK: central profissional de produtos integrada")

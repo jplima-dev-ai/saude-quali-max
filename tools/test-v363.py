@@ -34,17 +34,17 @@ def main():
 
     config = json.loads((ROOT / "data/config.json").read_text(encoding="utf-8"))
     routes = json.loads((ROOT / "data/routes.json").read_text(encoding="utf-8"))
-    require(config["versao"] == routes["version"] == "3.8.7", "versões divergentes")
+    require(config["versao"] == routes["version"] == "3.8.8", "versões divergentes")
     for key in ("razaoSocial", "cnpj", "enderecoControlador", "emailPrivacidade", "encarregado", "atualizadaEm"):
         require(key in config.get("privacidade", {}), f"configuração ausente: privacidade.{key}")
 
     customizer = (ROOT / "assets/scripts/client-customizer-v352.js").read_text(encoding="utf-8")
     require('data-wl-step="privacy"' in customizer and "privacidade.emailPrivacidade" in customizer, "White-label Studio sem etapa de privacidade")
     sw = (ROOT / "service-worker.js").read_text(encoding="utf-8")
-    require("qualimax-v3.8.7" in sw and "privacy.html" in sw and "privacy-v363.css" in sw and "privacy-v363.js" in sw, "cache de privacidade incompleto")
+    require("qualimax-v3.8.8" in sw and "privacy.html" in sw and "privacy-v363.css" in sw and "privacy-v363.js" in sw, "cache de privacidade incompleto")
     sitemap = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
     require("/privacy.html" in sitemap, "Política fora do sitemap")
-    print("v3.8.7 OK: política white-label integrada e 81 páginas validadas")
+    print("v3.8.8 OK: política white-label integrada e 81 páginas validadas")
 
 if __name__ == "__main__":
     main()

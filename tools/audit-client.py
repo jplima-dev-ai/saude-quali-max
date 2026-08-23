@@ -157,7 +157,7 @@ def main() -> int:
 
     # Admin Studio: backup deve acompanhar a release atual.
     admin_js = (ROOT / "assets" / "scripts" / "admin.js").read_text(encoding="utf-8")
-    if 'ADMIN_BACKUP_VERSION="3.8.7"' not in admin_js:
+    if 'ADMIN_BACKUP_VERSION="3.8.8"' not in admin_js:
         erros.append("Admin Studio está exportando backup com versão obsoleta.")
 
     # Segurança de jornada e deploy.

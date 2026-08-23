@@ -14,8 +14,9 @@
 .privacy-v363-section th, .privacy-v363-section td { padding: .75rem; border: 1px solid #ccdcd2; text-align: start; vertical-align: top; }
 .privacy-v363-section th { background: #edf6f1; }
 .privacy-v363-note { padding: 1rem; border-inline-start: 5px solid #c99a45; border-radius: .35rem; background: #fff9e9; }
-.privacy-v363-contact { display: grid; gap: .5rem; padding: 1rem; border-radius: .8rem; background: #edf6f1; }
-.privacy-v363-contact p { margin: 0; }
+.privacy-v363-contact { display: grid; gap: .5rem; padding: 1rem; border-radius: .8rem; background: #edf6f1; color: #53635c; }
+.privacy-v363-contact p { margin: 0; color: inherit; }
+.privacy-v363-contact strong, .privacy-v363-contact span, .privacy-v363-contact a { color: inherit; }
 .privacy-v363-site-links { padding: 1rem; text-align: center; background: #0d4532; color: #fff; }
 .privacy-v363-site-links a { display: inline-flex; min-block-size: 44px; align-items: center; color: #fff; font-weight: 800; text-decoration: underline; text-underline-offset: .25rem; }
 .privacy-v363-banner { position: fixed; z-index: 2100; inset-inline: max(.75rem, env(safe-area-inset-left)) max(.75rem, env(safe-area-inset-right)); inset-block-end: max(.75rem, env(safe-area-inset-bottom)); display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem; align-items: center; max-inline-size: 54rem; margin-inline: auto; padding: 1rem; border: 2px solid #176b4d; border-radius: 1rem; background: #fff; color: #173e30; box-shadow: 0 1rem 3rem rgb(13 69 50 / .24); }

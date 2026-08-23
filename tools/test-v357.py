@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Valida os contratos responsivos da versão 3.8.7."""
+"""Valida os contratos responsivos da versão 3.8.8."""
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -35,9 +35,9 @@ def main() -> None:
         check(forbidden not in js, f"construção insegura no JS: {forbidden}")
 
     sw = (ROOT / "service-worker.js").read_text(encoding="utf-8")
-    check('qualimax-v3.8.7' in sw, "cache da versão não atualizado")
+    check('qualimax-v3.8.8' in sw, "cache da versão não atualizado")
     check("responsive-v357.css" in sw and "responsive-v357.js" in sw, "assets fora do cache")
-    print(f"OK: contratos responsivos 3.8.7 validados em {len(PAGES)} páginas")
+    print(f"OK: contratos responsivos 3.8.8 validados em {len(PAGES)} páginas")
 
 
 if __name__ == "__main__":

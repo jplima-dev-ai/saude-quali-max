@@ -1,6 +1,6 @@
 {
   "name": "saude-qualimax",
-  "version": "3.8.7",
+  "version": "3.8.8",
   "private": true,
   "description": "Plataforma estática, acessível e white-label para lojas de produtos naturais.",
   "scripts": {

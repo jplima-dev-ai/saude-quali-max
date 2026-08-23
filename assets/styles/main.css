@@ -4633,13 +4633,22 @@ html.movimento-reduzido .interacao-toque::after {
 }
 .admin-topo h1 { margin:.15rem 0 .35rem; font-size:clamp(1.5rem,3vw,2.25rem); }
 .admin-topo p { color:rgba(255,255,255,.8); }
-.admin-eyebrow,.admin-kicker {
+.admin-eyebrow {
     color:var(--dourado);
     font-size:.78rem;
     font-weight:900;
     text-transform:uppercase;
     letter-spacing:.1em;
 }
+.admin-kicker {
+    color:#7a5b16;
+    font-size:.78rem;
+    font-weight:900;
+    text-transform:uppercase;
+    letter-spacing:.1em;
+}
+.admin-section-head p:not(.admin-kicker),
+.admin-v350-bulk p { color:#5f6d66; }
 .admin-topo-acoes { display:flex;gap:.65rem;flex-wrap:wrap; }
 .admin-topo .botao-secundario { background:transparent;color:#fff;border-color:rgba(255,255,255,.25); }
 .admin-app {
