@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Contratos de estabilização responsiva da versão 3.5.9."""
+"""Contratos de estabilização responsiva da versão 3.6.4."""
 from pathlib import Path
 import json
 
@@ -13,7 +13,7 @@ def require(value: bool, message: str) -> None:
 
 
 def main() -> None:
-    require(len(PAGES) == 79, f"quantidade de páginas inesperada: {len(PAGES)}")
+    require(len(PAGES) == 81, f"quantidade de páginas inesperada: {len(PAGES)}")
     for page in PAGES:
         html = page.read_text(encoding="utf-8")
         prefix = "../" if page.parent.name == "products" else ""
@@ -32,10 +32,10 @@ def main() -> None:
     for forbidden in ("innerHTML", "eval(", "new Function"):
         require(forbidden not in js, f"construção insegura: {forbidden}")
 
-    require(json.loads((ROOT / "data/config.json").read_text(encoding="utf-8"))["versao"] == "3.5.9", "config sem versão")
+    require(json.loads((ROOT / "data/config.json").read_text(encoding="utf-8"))["versao"] == "3.6.4", "config sem versão")
     sw = (ROOT / "service-worker.js").read_text(encoding="utf-8")
-    require("qualimax-v3.5.9" in sw and "responsive-v358.css" in sw and "responsive-v358.js" in sw, "cache incompleto")
-    print("v3.5.9 OK: zoom extremo, teclado virtual, tabelas e overflow validados em 79 páginas")
+    require("qualimax-v3.6.4" in sw and "responsive-v358.css" in sw and "responsive-v358.js" in sw, "cache incompleto")
+    print("v3.6.4 OK: zoom extremo, teclado virtual, tabelas e overflow validados em 81 páginas")
 
 
 if __name__ == "__main__":

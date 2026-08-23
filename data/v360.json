@@ -1,0 +1,32 @@
+{
+  "version": "3.6.4",
+  "modules": {
+    "routineBuilder": true,
+    "bulkCalculator": true,
+    "preferenceCenter": true,
+    "smartRefill": true,
+    "storeMode": true,
+    "afterPurchase": true,
+    "loyaltyClub": true,
+    "dynamicKits": true,
+    "giftFinder": true,
+    "commercialOpportunities": true
+  },
+  "bulkAmounts": [100, 250, 500, 1000],
+  "refillDefaultDays": 30,
+  "loyaltyTiers": [
+    {"name": "Semente", "minimum": 0},
+    {"name": "Folha", "minimum": 300},
+    {"name": "Árvore", "minimum": 800},
+    {"name": "Floresta", "minimum": 1600}
+  ],
+  "occasions": ["Aniversário", "Agradecimento", "Dia das Mães", "Natal", "Cuidado e carinho"],
+  "care": {
+    "chas": "Guarde em local seco, protegido de luz e aromas fortes. Prepare conforme as orientações da embalagem.",
+    "alimentos": "Mantenha a embalagem bem fechada e observe as instruções de conservação e validade do rótulo.",
+    "sementes": "Conserve em recipiente bem fechado, longe de calor e umidade. Observe aroma e aparência antes do consumo.",
+    "suplementos": "Siga o rótulo e a orientação do profissional que acompanha você. Não exceda a indicação do fabricante.",
+    "vitaminas": "Confira composição, modo de uso e advertências no rótulo. Em caso de dúvida, fale com um profissional.",
+    "default": "Siga as informações do rótulo, preserve a embalagem e confirme dúvidas de conservação com a equipe da loja."
+  }
+}

@@ -32,6 +32,17 @@ O MAX ajuda a descobrir, comparar e organizar produtos. Não realiza diagnóstic
 
 O Max continua sendo um agente local baseado no catálogo e em regras verificáveis. Ele não é um modelo de linguagem remoto, não inventa disponibilidade e não deve ser apresentado como GPT ou como atendente humano.
 
+## Identidade visual 3.6.1
+
+Max é representado por um leãozinho jovem e realista, com pelagem dourada em tom de mel, focinho creme, olhos verde-avelã e lenço verde-sálvia inspirado em folhas. A expressão é serena, acolhedora e curiosa, coerente com uma casa de produtos naturais.
+
+- `assets/images/max-lion-avatar-v361.webp`: versão de 512 × 512 pixels usada na conversa e na página 404;
+- `assets/images/max-lion-avatar-v361-128.webp`: versão leve de 128 × 128 pixels usada no botão flutuante;
+- `assets/styles/max-v361.css`: moldura, responsividade, contraste e movimentos opcionais;
+- `data/config.json`: permite trocar separadamente `chatbot.avatar` e `chatbot.avatarButton` em projetos white-label.
+
+As imagens usam `alt=""` por decisão de acessibilidade: o nome e a função do Max já são informados pelo botão e pelo cabeçalho da conversa, evitando repetição desnecessária em leitores de tela.
+
 ## Personalidade e naturalidade
 
 O Max reconhece confusão, insegurança, pressa, sensibilidade a preço e navegação sem compromisso. Ele faz uma pergunta por vez quando necessário, adapta o nível de detalhe, aceita correções e mantém o cliente no controle. Não finge emoções humanas, não cria urgência falsa e não usa intimidade artificial para pressionar compras.

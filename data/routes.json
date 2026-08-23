@@ -1,5 +1,5 @@
 {
-  "version": "3.5.9",
+  "version": "3.6.4",
   "defaultLocale": "pt-BR",
   "routes": {
     "about": {
@@ -17,6 +17,10 @@
     "contact": {
       "path": "contact.html",
       "label": "contato"
+    },
+    "privacy": {
+      "path": "privacy.html",
+      "label": "privacidade"
     },
     "support": {
       "path": "support.html",
@@ -41,6 +45,10 @@
     "quiz": {
       "path": "quiz.html",
       "label": "quiz"
+    },
+    "wellnessHub": {
+      "path": "wellness-hub.html",
+      "label": "central de bem-estar"
     },
     "guided-shopping.html": {
       "locale": "pt-BR",

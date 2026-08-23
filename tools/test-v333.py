@@ -1,7 +1,7 @@
 from pathlib import Path
 import json,re,sys
 R=Path(__file__).resolve().parents[1];errors=[]
-for f in ['cart.html','campaigns.html','assets/styles/commerce.css','assets/scripts/commerce-v333.js','data/v333.json','assets/images/max-avatar-v333.svg']:
+for f in ['cart.html','campaigns.html','assets/styles/commerce.css','assets/scripts/commerce-v333.js','data/v333.json','assets/images/max-lion-avatar-v361.webp']:
  if not (R/f).exists():errors.append('ausente: '+f)
 for p in list(R.glob('*.html'))+list((R/'products').glob('*.html')):
  t=p.read_text(encoding='utf-8')

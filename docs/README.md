@@ -1,6 +1,6 @@
 # Documentação da Saúde Qualimax
 
-Documentação técnica e operacional da versão **3.5.9**. Este diretório funciona como manual oficial do projeto: os guias descrevem o estado publicado, enquanto decisões anteriores permanecem no changelog.
+Documentação técnica e operacional da versão **3.6.4**. Este diretório funciona como manual oficial do projeto: os guias descrevem o estado publicado, enquanto decisões anteriores permanecem no changelog.
 
 ## Mapa
 
@@ -24,6 +24,9 @@ Documentação técnica e operacional da versão **3.5.9**. Este diretório func
 | [Segurança atual](SECURITY-REVIEW-V351.md) | Revisão ofensiva e limites arquiteturais |
 | [Changelog](CHANGELOG.md) | Histórico consolidado |
 | [Padrão de documentação](DOCUMENTATION-STANDARD.md) | Convenções editoriais e critério de atualização |
+| [Central de Bem-Estar 3.6](WELLNESS-HUB-V360.md) | Dez módulos para clientes e inteligência comercial |
+| [Revisão responsiva 3.6.2](RESPONSIVE-REVIEW-V362.md) | Matriz multitelas, bugs corrigidos e evidências de teste |
+| [Limpeza do projeto 3.6.4](PROJECT-CLEANUP-V364.md) | Critérios, arquivos removidos e validação da manutenção |
 
 ## Regras
 
@@ -43,7 +46,7 @@ Documentação técnica e operacional da versão **3.5.9**. Este diretório func
 
 ## Estado da documentação
 
-- versão coberta: 3.5.9;
+- versão coberta: 3.6.4;
 - idioma operacional: português do Brasil;
 - nomes técnicos: inglês;
 - público: desenvolvimento, implantação, operação e suporte;

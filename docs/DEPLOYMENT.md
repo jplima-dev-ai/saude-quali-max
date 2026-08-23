@@ -16,7 +16,7 @@ Procedimento de release para GitHub Pages, Netlify ou entrega white-label. Execu
 git status
 git diff --check
 git add .
-git commit -m "release: Saúde Qualimax v3.5.9"
+git commit -m "release: Saúde Qualimax v3.6.4"
 ```
 
 Revise o diff antes de adicionar arquivos. Não publique backups locais, credenciais, dados de clientes ou pacotes de outra loja.

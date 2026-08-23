@@ -2276,6 +2276,14 @@
             }
         });
 
+        const areaAtalhos = document.querySelector(".chat-acoes");
+        if (areaAtalhos && !areaAtalhos.querySelector('[data-chat-acao="central"]')) {
+            const central = document.createElement("button");
+            central.type = "button";
+            central.dataset.chatAcao = "central";
+            central.textContent = "Central de Bem-Estar";
+            areaAtalhos.append(central);
+        }
         document.querySelectorAll("[data-chat-acao]").forEach((botao) => botao.addEventListener("click", () => {
             const acao = botao.dataset.chatAcao;
             if (acao === "produto") { responderAjudaEscolha(); return; }
@@ -2285,6 +2293,11 @@
                 return;
             }
             if (acao === "quiz") { fechar(); irQuiz(); return; }
+            if (acao === "central") {
+                fechar();
+                location.href = `${location.pathname.includes("/products/") ? "../" : ""}wellness-hub.html`;
+                return;
+            }
             if (acao === "redes") { mostrarRedesNoChat(); return; }
             if (acao === "whatsapp") { adicionarWhatsAppNoChat(); }
         }));

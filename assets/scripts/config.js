@@ -184,7 +184,8 @@
             catalogo: "Catálogo",
             quiz: "Quiz",
             sobre: "Sobre",
-            contato: "Contato"
+            contato: "Contato",
+            privacy: "Privacidade"
         };
 
         const breadcrumb = pagina !== "home" && site ? {
@@ -356,13 +357,16 @@
         const subtituloChatbot = String(config.chatbot?.subtitulo || "Seu parceiro de descobertas").slice(0, 100);
         const saudacaoChatbot = String(config.chatbot?.saudacao || `Oi! Eu sou ${nomeChatbot}. Me conta o que você procura e eu te ajudo a explorar o catálogo.`).slice(0, 320);
         const avatarChatbot = caminhoImagemSeguro(config.chatbot?.avatar || "");
+        const avatarBotao = caminhoImagemSeguro(config.chatbot?.avatarButton || config.chatbot?.avatar || "");
         document.querySelectorAll("[data-chatbot-nome]").forEach((el) => { el.textContent = nomeChatbot; });
         document.querySelectorAll("[data-chatbot-subtitulo]").forEach((el) => { el.textContent = subtituloChatbot; });
         document.querySelectorAll("[data-chatbot-label]").forEach((el) => { el.setAttribute("aria-label", `Abrir ${nomeChatbot}`); });
         document.querySelectorAll("[data-chatbot-region]").forEach((el) => { el.setAttribute("aria-label", nomeChatbot); });
         document.querySelectorAll("[data-chat-saudacao]").forEach((el) => { el.textContent = saudacaoChatbot; });
         if (avatarChatbot) {
-            document.querySelectorAll("[data-chatbot-avatar]").forEach((el) => { el.src = avatarChatbot; });
+            document.querySelectorAll("[data-chatbot-avatar]").forEach((el) => {
+                el.src = el.classList.contains("chatbot-abrir-avatar") && avatarBotao ? avatarBotao : avatarChatbot;
+            });
         }
         aplicarSEO(config);
         aplicarDadosEstruturados(config);

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Valida os contratos responsivos da versão 3.5.9."""
+"""Valida os contratos responsivos da versão 3.6.4."""
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -12,7 +12,7 @@ def check(condition: bool, message: str) -> None:
 
 
 def main() -> None:
-    check(len(PAGES) == 79, f"esperadas 79 páginas, encontradas {len(PAGES)}")
+    check(len(PAGES) == 81, f"esperadas 81 páginas, encontradas {len(PAGES)}")
     for page in PAGES:
         text = page.read_text(encoding="utf-8")
         prefix = "../" if page.parent.name == "products" else ""
@@ -35,9 +35,9 @@ def main() -> None:
         check(forbidden not in js, f"construção insegura no JS: {forbidden}")
 
     sw = (ROOT / "service-worker.js").read_text(encoding="utf-8")
-    check('qualimax-v3.5.9' in sw, "cache da versão não atualizado")
+    check('qualimax-v3.6.4' in sw, "cache da versão não atualizado")
     check("responsive-v357.css" in sw and "responsive-v357.js" in sw, "assets fora do cache")
-    print(f"OK: contratos responsivos 3.5.9 validados em {len(PAGES)} páginas")
+    print(f"OK: contratos responsivos 3.6.4 validados em {len(PAGES)} páginas")
 
 
 if __name__ == "__main__":

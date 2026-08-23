@@ -1,0 +1,27 @@
+/* Max 3.6.1 — avatar realista, legível e responsivo */
+.chatbot-abrir-avatar,
+.chatbot-avatar {
+  display: block;
+  flex: 0 0 auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #fffaf0, #e8f2e8);
+  border: 2px solid rgb(255 255 255 / .9);
+  box-shadow: 0 .25rem .8rem rgb(36 75 51 / .22);
+}
+.chatbot-abrir-avatar { inline-size: 3.25rem; block-size: 3.25rem; }
+.chatbot-avatar { inline-size: 4rem; block-size: 4rem; }
+.chatbot-abrir:hover .chatbot-abrir-avatar,
+.chatbot-abrir:focus-visible .chatbot-abrir-avatar { transform: scale(1.04); }
+@media (prefers-reduced-motion: no-preference) {
+  .chatbot-abrir-avatar { transition: transform 180ms ease, box-shadow 180ms ease; }
+}
+@media (max-width: 430px) {
+  .chatbot-abrir-avatar { inline-size: 2.9rem; block-size: 2.9rem; }
+  .chatbot-avatar { inline-size: 3.5rem; block-size: 3.5rem; }
+}
+@media (forced-colors: active) {
+  .chatbot-abrir-avatar, .chatbot-avatar { border: 2px solid CanvasText; box-shadow: none; }
+}

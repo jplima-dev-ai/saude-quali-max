@@ -2,6 +2,82 @@
 
 O histórico segue uma adaptação de Keep a Changelog e versionamento semântico.
 
+## [3.6.4] — 2026-08-22
+
+### Limpeza auditada do projeto
+
+- inspeção de toda a árvore do projeto, incluindo páginas, recursos, dados, documentação e ferramentas;
+- remoção de 26 scripts de migração pontuais, já incorporados ao estado atual e sem função em novas instalações;
+- remoção de dois utilitários descartáveis usados em revisões antigas de copy e documentação;
+- remoção de cinco imagens sem referência ativa, substituídas por recursos atuais ou nunca utilizadas;
+- redução aproximada de 1,5 MB sem alterar páginas, produtos ou funcionalidades;
+- preservação dos testes históricos que continuam executando cobertura real de regressão;
+- preservação de módulos com sufixos de versões anteriores quando ainda carregados pela plataforma;
+- novo contrato automatizado da versão 3.6.4 e relatório técnico com a relação completa dos itens removidos;
+- atualização de configuração, rotas, cache, personalizador, documentação e ferramentas para a versão 3.6.4.
+
+## [3.6.3] — 2026-08-22
+
+### Política de Privacidade white-label
+
+- nova página pública `privacy.html`, acessível, responsiva e escrita em linguagem clara;
+- cobertura de dados locais, WhatsApp, CEP, hospedagem, fornecedores, retenção, segurança, crianças e direitos dos titulares;
+- aviso resumido de privacidade integrado ao site, sem bloquear a navegação;
+- indicação acessível nos links que transferem o visitante para serviços externos;
+- link permanente para a política em todas as 81 páginas;
+- configuração centralizada do controlador, CNPJ ou CPF, endereço, canal e encarregado;
+- nova etapa “Privacidade” no White-label Studio, com validação antes da exportação;
+- política adicionada às rotas, sitemap, cache offline e documentação;
+- modelo preparado para permanecer sem analytics ou cookies publicitários por padrão;
+- suíte de testes atualizada para validar a integração jurídica e técnica.
+
+## [3.6.2] — 2026-08-22
+
+### Responsividade adaptativa e revisão repetida
+
+- nova camada responsiva integrada às 80 páginas;
+- pontos de adaptação específicos para celular compacto, celular, tablet e desktop;
+- correções para orientação horizontal, áreas seguras, zoom elevado e teclado virtual;
+- formulários móveis com tamanho de fonte seguro contra zoom automático do Safari;
+- diálogos, Max, modais e checkout limitados pela viewport visual real;
+- tabelas e regiões largas estabilizadas com rolagem horizontal contida;
+- compatibilidade adicional com toque, dados reduzidos, contraste forçado e impressão;
+- correção das sequências literais de quebra de linha em `assets/styles/main.css`, que podiam invalidar uma camada visual extensa;
+- cache offline, Admin Studio, White-label Studio, rotas e configurações sincronizados com a versão 3.6.2;
+- suíte integral executada repetidamente para detectar regressões e falhas intermitentes.
+
+## [3.6.1] — 2026-08-22
+
+### Revisão integral e nova identidade do Max
+
+- revisão automatizada das 80 páginas, links internos, recursos, IDs, referências ARIA, formulários, imagens e rotas;
+- correção dos metadados sociais, URL canônica, manifesto e inicialização PWA da Central de Bem-Estar;
+- sincronização da versão do catálogo, rotas, backups do Admin, personalizador e cache offline;
+- substituição do avatar anterior por um leãozinho realista em tons de mel, creme e verde-sálvia;
+- imagens WebP separadas para conversa e botão, reduzindo tráfego e preservando nitidez;
+- integração do novo Max nas conversas, no acionador flutuante e na página 404;
+- tratamento acessível do avatar como imagem decorativa, evitando anúncios redundantes em leitores de tela;
+- nova auditoria de regressão e atualização da documentação técnica.
+
+## [3.6.0] — 2026-08-22
+
+### Central de Bem-Estar e inteligência comercial
+
+- nova página `wellness-hub.html` com dez módulos integrados e responsivos;
+- Montador de rotina com o Max, orçamento e seleção compatível com preferências;
+- calculadora a granel baseada em quantidade-base e preço fixo do catálogo;
+- perfil local de preferências, restrições e ingredientes a evitar;
+- reposição inteligente com lembretes controlados pelo visitante;
+- modo loja com consulta acessível por nome e base preparada para QR Codes;
+- pós-compra com orientações gerais por categoria;
+- clube de fidelidade demonstrativo com categorias Semente, Folha, Árvore e Floresta;
+- kits dinâmicos e presente inteligente limitados pelo orçamento;
+- painel Admin com indicadores e próximas ações comerciais;
+- dez módulos ativáveis individualmente pelo Admin Studio e `data/config.json`;
+- atalho da Central na página inicial e na paleta de comandos;
+- rota, sitemap e cache offline atualizados;
+- documentação operacional e testes específicos adicionados.
+
 ## [3.5.9] — 2026-08-22
 
 ### Correções sutis e documentação profissional

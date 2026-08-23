@@ -1,0 +1,131 @@
+/* Saúde Qualimax 3.6.2 — responsividade adaptativa e estabilização multitelas */
+:root {
+  --v362-vw: 100vw;
+  --v362-vh: 100dvh;
+  --v362-safe-inline-start: max(.75rem, env(safe-area-inset-left));
+  --v362-safe-inline-end: max(.75rem, env(safe-area-inset-right));
+  --v362-safe-bottom: max(.75rem, env(safe-area-inset-bottom));
+}
+
+html, body { max-inline-size: 100%; }
+body { min-inline-size: 0; }
+main, header, footer, nav, section, article, aside, form, fieldset,
+.container, .produto-card, .v360-card, .admin-card { min-inline-size: 0; }
+
+img, picture, video, canvas, svg { max-inline-size: 100%; }
+iframe { max-inline-size: 100%; }
+button, .botao, [role="button"] { white-space: normal; overflow-wrap: anywhere; }
+input, select, textarea { min-inline-size: 0; }
+
+.v362-horizontal-scroll {
+  max-inline-size: 100%;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scrollbar-gutter: stable;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Tablets: preserva densidade sem comprimir textos ou controles. */
+@media (min-width: 768px) and (max-width: 1180px) {
+  .container { inline-size: min(calc(100% - 2.5rem), var(--largura-maxima, 1200px)); }
+  .produtos-grid, .destaques-grid, .jornada-local-grid,
+  .beneficios-premium-grid, .categorias-populares-grid, .contato-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .admin-layout, .admin-produtos-layout, .wl352-workspace { gap: 1rem; }
+}
+
+/* Celulares e texto ampliado. */
+@media (max-width: 767px) {
+  .container { inline-size: min(calc(100% - 1.5rem), var(--largura-maxima, 1200px)); }
+  .topo-conteudo, .cabecalho-conteudo { min-inline-size: 0; }
+  .logo, .logo-imagem-link { min-inline-size: 0; max-inline-size: calc(100% - 4rem); }
+  .logo-imagem { max-inline-size: 100%; }
+
+  .produtos-grid, .destaques-grid, .jornada-local-grid,
+  .beneficios-premium-grid, .categorias-populares-grid, .contato-grid,
+  .v340-grid, .v342-grid, .v360-form-grid, .v360-insights,
+  .admin-v350-metricas, .admin-v350-filtros, .wl352-group, .wl352-features {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero-botoes, .produto-acoes, .produto-pagina-acoes, .v340-actions,
+  .v342-actions, .v360-actions, .not-found-actions, .cart-empty-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .hero-botoes > *, .produto-pagina-acoes > *, .v340-actions > *,
+  .v342-actions > *, .v360-actions > *, .not-found-actions > *,
+  .cart-empty-actions > * { inline-size: 100%; }
+
+  /* 16px impede zoom automático do Safari ao focar formulários. */
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]),
+  select, textarea { font-size: max(1rem, 16px); }
+
+  .modal, .produto-modal, .escolhas-modal, .chatbot {
+    max-block-size: var(--v362-vh);
+  }
+  .modal-conteudo, .produto-modal-dialog, .escolhas-dialog, .chatbot-dialog {
+    inline-size: 100%;
+    max-inline-size: 100%;
+    max-block-size: var(--v362-vh);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+  .chatbot {
+    inset-inline: var(--v362-safe-inline-start) var(--v362-safe-inline-end);
+    inline-size: auto;
+  }
+  .chat-mensagens { min-block-size: 0; }
+}
+
+/* Celulares compactos e zoom entre 300% e 400%. */
+@media (max-width: 390px) {
+  .container { inline-size: min(calc(100% - 1rem), var(--largura-maxima, 1200px)); }
+  h1 { font-size: clamp(1.65rem, 9vw, 2.2rem); }
+  h2 { font-size: clamp(1.35rem, 7vw, 1.85rem); }
+  .v360-card, .v340-card, .v340-panel, .admin-card,
+  .produto-card, .not-found-card { padding: 1rem; border-radius: .9rem; }
+  .v360-heading { gap: .65rem; }
+  .v360-step { flex-basis: 2.15rem; inline-size: 2.15rem; block-size: 2.15rem; }
+  .quantity-control { grid-template-columns: 48px minmax(3.5rem, 1fr) 48px; inline-size: 100%; }
+  .quantity-control input { inline-size: 100%; }
+  .admin-v350-steps { grid-template-columns: minmax(0, 1fr); }
+  .chat-input > div { align-items: stretch; flex-direction: column; }
+  .chat-input button { min-block-size: 48px; }
+}
+
+/* Paisagem curta: remove elementos fixos que disputam a área útil. */
+@media (max-height: 540px) and (orientation: landscape) {
+  .cabecalho, .topo, .acessibilidade-barra,
+  .cart-summary, .checkout-primary, .admin-nav, .admin-editor-acoes,
+  .wl352-actions, .wl352-preview { position: static !important; inset: auto !important; }
+  .produto-modal, .escolhas-modal, .chatbot { inset: 0; padding: 0; }
+  .produto-modal-dialog, .escolhas-dialog, .chatbot-dialog {
+    block-size: var(--v362-vh);
+    max-block-size: var(--v362-vh);
+    border-radius: 0;
+  }
+}
+
+html[data-v362-keyboard="open"] .chatbot-abrir,
+html[data-v362-keyboard="open"] .whatsapp-flutuante,
+html[data-v362-keyboard="open"] .carrinho-atalho,
+html[data-v362-keyboard="open"] .carrinho-flutuante { display: none !important; }
+
+@media (pointer: coarse) {
+  button, .botao, [role="button"], input, select, textarea { min-block-size: 48px; }
+}
+
+@media (prefers-reduced-data: reduce) {
+  .motion-decor, .motion-progress { display: none !important; }
+  .motion-reveal, .motion-card { opacity: 1 !important; transform: none !important; animation: none !important; transition: none !important; }
+}
+
+@media (forced-colors: active) {
+  .v362-horizontal-scroll { border: 2px solid CanvasText; }
+}
+
+@media print {
+  .v362-horizontal-scroll { overflow: visible; }
+}

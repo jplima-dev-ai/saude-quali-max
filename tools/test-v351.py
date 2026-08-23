@@ -33,7 +33,7 @@ for page in pages:
         if local and not (page.parent/local).resolve().exists():errors.append(f"{page.name}: referência quebrada {ref}")
 
 cfg=json.loads((root/"data/config.json").read_text(encoding="utf-8"))
-if cfg.get("versao")!="3.5.9":errors.append("versão incorreta")
+if cfg.get("versao")!="3.6.4":errors.append("versão incorreta")
 commerce=(root/"assets/scripts/commerce-v332.js").read_text(encoding="utf-8")
 db=(root/"assets/scripts/db.js").read_text(encoding="utf-8")
 discovery=(root/"assets/scripts/discovery.js").read_text(encoding="utf-8")
@@ -45,7 +45,7 @@ for token in ("storesPermitidos","chaveSegura","__proto__","safeClone"):
 if "catalog\\.html" not in discovery or "catalogo\\.html" in discovery:errors.append("rota segura de descoberta incorreta")
 for token in ("Strict-Transport-Security","Content-Security-Policy","X-Frame-Options","Cache-Control: no-store"):
     if token not in headers:errors.append(f"cabeçalho ausente: {token}")
-if len(pages)!=79:errors.append(f"esperadas 79 páginas, encontradas {len(pages)}")
+if len(pages)!=81:errors.append(f"esperadas 81 páginas, encontradas {len(pages)}")
 if errors:
-    print("v3.5.9 FAILED\n"+"\n".join(errors));sys.exit(1)
-print("v3.5.9 OK: 79 páginas e vetores ofensivos verificados")
+    print("v3.6.4 FAILED\n"+"\n".join(errors));sys.exit(1)
+print("v3.6.4 OK: 81 páginas e vetores ofensivos verificados")

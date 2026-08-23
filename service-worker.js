@@ -1,6 +1,8 @@
-const CACHE = "qualimax-v3.5.9";
+const CACHE = "qualimax-v3.6.4";
 const SHELL = [
-  "./assets/styles/responsive-v358.css", "./assets/scripts/responsive-v358.js",
+  "./wellness-hub.html", "./data/v360.json", "./assets/styles/platform-v360.css", "./assets/scripts/platform-v360.js", "./assets/scripts/admin-v360.js",
+  "./assets/styles/responsive-v358.css", "./assets/styles/responsive-v362.css", "./assets/scripts/responsive-v358.js", "./assets/scripts/responsive-v362.js",
+  "./privacy.html", "./assets/styles/privacy-v363.css", "./assets/scripts/privacy-v363.js",
   "./assets/styles/responsive-v357.css", "./assets/scripts/responsive-v357.js",
   "./assets/scripts/max-reasoning-v356.js",
   "./404.html", "./assets/styles/not-found-v355.css", "./assets/scripts/not-found-v355.js",
@@ -23,7 +25,9 @@ const SHELL = [
   "./admin.html", "./assets/styles/main.css", "./assets/scripts/site.js", "./manifest.webmanifest",
   "./data/config.json", "./data/routes.json", "./data/products.json", "./data/categories.json", "./data/quiz.json", "./data/faq.json",
   "./data/price-research.json", "./data/baskets.json", "./assets/scripts/commerce-v332.js",
-  "./assets/images/max-avatar-v333.svg",
+  "./assets/images/max-lion-avatar-v361.webp",
+  "./assets/images/max-lion-avatar-v361-128.webp",
+  "./assets/styles/max-v361.css",
   "./assets/images/logo-saude-qualimax.webp", "./assets/scripts/pwa.js", "./assets/scripts/offline.js", "./assets/scripts/frame-guard.js", "./assets/scripts/config.js", "./assets/scripts/db.js", "./assets/scripts/collections.js", "./assets/scripts/products.js", "./assets/scripts/max-core.js", "./assets/scripts/max-entities.js", "./assets/scripts/max-recommendation.js", "./assets/scripts/max-nlu.js", "./assets/scripts/max-decision.js", "./assets/scripts/max-intelligence.js", "./assets/scripts/max-sales.js", "./assets/scripts/max-sales-advanced.js", "./assets/scripts/max-dialogue.js", "./assets/scripts/max-intents.js", "./assets/scripts/chatbot.js",
   "./assets/scripts/promotions.js",
   "./assets/scripts/discovery.js",

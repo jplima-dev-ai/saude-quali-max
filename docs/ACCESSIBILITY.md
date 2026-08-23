@@ -1,5 +1,9 @@
 # Acessibilidade
 
+## Responsividade acessível 3.6.2
+
+A interface reorganiza conteúdo sem alterar sua ordem semântica em celulares, tablets, orientação horizontal e zoom elevado. Controles de toque mantêm ao menos 48 pixels CSS; o teclado virtual oculta temporariamente os acionadores flutuantes para não cobrir campos; tabelas largas permanecem navegáveis em uma região rolável; e preferências de redução de movimento, dados e contraste são respeitadas.
+
 ## Compromisso
 
 A plataforma prioriza teclado, NVDA e leitores de tela, tendo WCAG 2.2 nível AA como referência para fluxos essenciais.

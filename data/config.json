@@ -31,7 +31,8 @@
   "chatbot": {
     "ativo": true,
     "nome": "Max",
-    "avatar": "assets/images/max-avatar-v333.svg",
+    "avatar": "assets/images/max-lion-avatar-v361.webp",
+    "avatarButton": "assets/images/max-lion-avatar-v361-128.webp",
     "subtitulo": "Seu guia inteligente e atencioso para conhecer a loja",
     "saudacao": "Olá! Eu sou o Max. Estou aqui para ajudar você a conhecer os produtos com calma. Pode me dizer o que procura, o que prefere evitar ou até mesmo dizer que ainda não sabe por onde começar.",
     "tom": "acolhedor, claro, respeitoso e sem gírias",
@@ -70,6 +71,17 @@
   "analytics": {
     "enabled": false
   },
+  "privacidade": {
+    "avisoAtivo": true,
+    "razaoSocial": "Saúde Qualimax",
+    "cnpj": "",
+    "enderecoControlador": "Av. Central, 420 - Parque Residencial Laranjeiras, Serra - ES, CEP 29165-130",
+    "emailPrivacidade": "contato.sqm@gmail.com",
+    "encarregado": "Canal de privacidade da Saúde Qualimax",
+    "atualizadaEm": "22 de agosto de 2026",
+    "analyticsAtivo": false,
+    "cookiesPublicitariosAtivos": false
+  },
   "seo": {
     "title": "Saúde Qualimax | Produtos Naturais em Serra - ES",
     "description": "Explore produtos naturais, chás, castanhas, sementes, vitaminas e suplementos na Saúde Qualimax em Serra - ES. Tire dúvidas e consulte disponibilidade pelo WhatsApp.",
@@ -99,6 +111,11 @@
         "title": "Contato | Saúde Qualimax em Serra - ES",
         "description": "Fale com a Saúde Qualimax para consultar produtos, disponibilidade, retirada e entrega em Serra - ES.",
         "canonical": "https://jplima-dev-ai.github.io/saude-quali-max/contact.html"
+      },
+      "privacy": {
+        "title": "Política de Privacidade | Saúde Qualimax",
+        "description": "Entenda como a Saúde Qualimax trata dados pessoais, preferências locais, atendimento pelo WhatsApp e solicitações relacionadas à LGPD.",
+        "canonical": "https://jplima-dev-ai.github.io/saude-quali-max/privacy.html"
       }
     }
   },
@@ -116,7 +133,17 @@
     "campanhas": true,
     "kits": true,
     "comandos": true,
-    "inteligenciaComercial": true
+    "inteligenciaComercial": true,
+    "routineBuilder": true,
+    "bulkCalculator": true,
+    "preferenceCenter": true,
+    "smartRefill": true,
+    "storeMode": true,
+    "afterPurchase": true,
+    "loyaltyClub": true,
+    "dynamicKits": true,
+    "giftFinder": true,
+    "commercialOpportunities": true
   },
   "comercial": {
     "horario": "",
@@ -198,7 +225,7 @@
       }
     ]
   },
-  "versao": "3.5.9",
+  "versao": "3.6.4",
   "animacoes": {
     "ativo": true,
     "nivel": "suave",

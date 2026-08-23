@@ -2623,7 +2623,86 @@ body.modal-aberto, body.chat-aberto { overflow: hidden; }
     .produto-modal-dialog,
     .hero-busca-atalho { scroll-behavior: auto; }
 }
-\n\n/* =========================================================\n   SAÚDE QUALIMAX v1.2 — catálogo visual premium\n   ========================================================= */\n.produtos-grid { align-items: stretch; }\n.produto-card-dinamico {\n    border-radius: 1.15rem;\n    border-color: rgba(23,107,77,.18);\n    box-shadow: 0 12px 34px rgba(13,69,50,.09);\n    background: linear-gradient(180deg,#fff 0%,#fdfdfb 100%);\n}\n.produto-card-dinamico .produto-imagem {\n    position: relative;\n    height: auto;\n    aspect-ratio: 4 / 5;\n    background: #f4f1e9;\n    border-bottom: 1px solid rgba(23,107,77,.12);\n}\n.produto-card-dinamico .produto-imagem::after {\n    content: "";\n    position: absolute;\n    inset: auto 0 0;\n    height: 22%;\n    pointer-events: none;\n    background: linear-gradient(to top,rgba(0,0,0,.045),transparent);\n}\n.produto-card-dinamico .produto-imagem img {\n    display: block;\n    width: 100%;\n    height: 100%;\n    object-fit: cover;\n    object-position: center;\n}\n.produto-card-dinamico .produto-conteudo { padding: 1.35rem; }\n.produto-card-dinamico .produto-conteudo h3 { margin: .35rem 0 .65rem; line-height: 1.22; }\n.produto-card-dinamico .produto-conteudo > p { margin: 0; color: var(--texto-suave,#51615a); }\n.produto-card-dinamico .produto-acoes { margin-top: auto; padding-top: 1.1rem; }\n.produto-card-dinamico .produto-categoria {\n    width: fit-content;\n    border: 1px solid rgba(23,107,77,.16);\n    border-radius: 999px;\n}\n.produto-modal-dialog { width: min(920px,100%); }\n.produto-modal-layout { display:grid; grid-template-columns:minmax(240px,.85fr) minmax(0,1.15fr); gap:2rem; align-items:start; }\n.produto-modal-imagem { overflow:hidden; aspect-ratio:4/5; border-radius:1rem; background:#f4f1e9; border:1px solid rgba(23,107,77,.14); }\n.produto-modal-imagem img { width:100%; height:100%; object-fit:cover; display:block; }\n.produto-modal-informacoes { min-width:0; }\n.produto-modal-informacoes .botao { display:inline-flex; justify-content:center; margin-top:.5rem; }\n@media (max-width: 720px) {\n  .produto-modal-layout { grid-template-columns:1fr; gap:1.25rem; }\n  .produto-modal-imagem { max-width:360px; width:100%; margin-inline:auto; }\n}\n@media (prefers-reduced-motion: reduce) {\n  .produto-card-dinamico,.produto-card-dinamico .produto-imagem img { transform:none!important; transition:none!important; }\n}\n\n\n/* Saúde Qualimax v1.3 — camada visual premium */\n.destaques { padding: 110px 0; background: linear-gradient(180deg, #f4f8f2 0%, #fbfaf6 100%); }\n.destaques-cabecalho { display:grid; grid-template-columns:minmax(0,1fr) minmax(280px,.72fr); gap:48px; align-items:end; margin-bottom:42px; text-align:left; }\n.destaques-cabecalho h2 { max-width:680px; margin:0; }\n.destaques-cabecalho > p { margin:0; line-height:1.8; }\n.destaques-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:22px; }\n.destaques-grid .produto-card:nth-child(n+5) { display:none; }\n.destaques-rodape { display:flex; justify-content:center; margin-top:36px; }\n.produto-card { border-radius:20px; border-color:rgba(23,107,77,.14); box-shadow:0 10px 35px rgba(13,69,50,.08); }\n.produto-imagem { position:relative; height:auto; aspect-ratio:4/5; background:linear-gradient(145deg,#f7f5ef,#fff); }\n.produto-imagem img { object-fit:cover; }\n.produto-selo-destaque { position:absolute; top:14px; left:14px; z-index:2; padding:7px 10px; border-radius:999px; background:rgba(255,255,255,.94); color:var(--verde-escuro); font-size:.72rem; font-weight:800; box-shadow:0 5px 18px rgba(0,0,0,.09); }\n.produto-conteudo { padding:22px; }\n.produto-conteudo h3 { font-size:1.18rem; line-height:1.3; }\n.produto-acoes { display:grid; gap:12px; margin-top:auto; }\n.produto-acoes .link-destaque { text-align:center; }\n.catalogo-controles { border:1px solid rgba(23,107,77,.13); border-radius:20px; padding:24px; background:#fbfcfa; box-shadow:0 12px 35px rgba(13,69,50,.06); }\n.hero-imagem { object-fit:cover; }\n@media (max-width: 1024px) { .destaques-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .destaques-cabecalho { grid-template-columns:1fr; gap:16px; } }\n@media (max-width: 600px) { .destaques { padding:76px 0; } .destaques-grid { grid-template-columns:1fr 1fr; gap:12px; } .destaques-grid .produto-conteudo { padding:15px; } .destaques-grid .produto-conteudo p { display:none; } .destaques-grid .produto-acoes .link-destaque { display:none; } .destaques-grid .produto-conteudo h3 { font-size:1rem; } }\n@media (prefers-reduced-motion: reduce) { .produto-card, .produto-imagem img { transition:none !important; } .produto-card:hover { transform:none; } .produto-card:hover .produto-imagem img { transform:none; } }\n
+
+
+/* =========================================================
+   SAÚDE QUALIMAX v1.2 — catálogo visual premium
+   ========================================================= */
+.produtos-grid { align-items: stretch; }
+.produto-card-dinamico {
+    border-radius: 1.15rem;
+    border-color: rgba(23,107,77,.18);
+    box-shadow: 0 12px 34px rgba(13,69,50,.09);
+    background: linear-gradient(180deg,#fff 0%,#fdfdfb 100%);
+}
+.produto-card-dinamico .produto-imagem {
+    position: relative;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    background: #f4f1e9;
+    border-bottom: 1px solid rgba(23,107,77,.12);
+}
+.produto-card-dinamico .produto-imagem::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0;
+    height: 22%;
+    pointer-events: none;
+    background: linear-gradient(to top,rgba(0,0,0,.045),transparent);
+}
+.produto-card-dinamico .produto-imagem img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.produto-card-dinamico .produto-conteudo { padding: 1.35rem; }
+.produto-card-dinamico .produto-conteudo h3 { margin: .35rem 0 .65rem; line-height: 1.22; }
+.produto-card-dinamico .produto-conteudo > p { margin: 0; color: var(--texto-suave,#51615a); }
+.produto-card-dinamico .produto-acoes { margin-top: auto; padding-top: 1.1rem; }
+.produto-card-dinamico .produto-categoria {
+    width: fit-content;
+    border: 1px solid rgba(23,107,77,.16);
+    border-radius: 999px;
+}
+.produto-modal-dialog { width: min(920px,100%); }
+.produto-modal-layout { display:grid; grid-template-columns:minmax(240px,.85fr) minmax(0,1.15fr); gap:2rem; align-items:start; }
+.produto-modal-imagem { overflow:hidden; aspect-ratio:4/5; border-radius:1rem; background:#f4f1e9; border:1px solid rgba(23,107,77,.14); }
+.produto-modal-imagem img { width:100%; height:100%; object-fit:cover; display:block; }
+.produto-modal-informacoes { min-width:0; }
+.produto-modal-informacoes .botao { display:inline-flex; justify-content:center; margin-top:.5rem; }
+@media (max-width: 720px) {
+  .produto-modal-layout { grid-template-columns:1fr; gap:1.25rem; }
+  .produto-modal-imagem { max-width:360px; width:100%; margin-inline:auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .produto-card-dinamico,.produto-card-dinamico .produto-imagem img { transform:none!important; transition:none!important; }
+}
+
+
+/* Saúde Qualimax v1.3 — camada visual premium */
+.destaques { padding: 110px 0; background: linear-gradient(180deg, #f4f8f2 0%, #fbfaf6 100%); }
+.destaques-cabecalho { display:grid; grid-template-columns:minmax(0,1fr) minmax(280px,.72fr); gap:48px; align-items:end; margin-bottom:42px; text-align:left; }
+.destaques-cabecalho h2 { max-width:680px; margin:0; }
+.destaques-cabecalho > p { margin:0; line-height:1.8; }
+.destaques-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:22px; }
+.destaques-grid .produto-card:nth-child(n+5) { display:none; }
+.destaques-rodape { display:flex; justify-content:center; margin-top:36px; }
+.produto-card { border-radius:20px; border-color:rgba(23,107,77,.14); box-shadow:0 10px 35px rgba(13,69,50,.08); }
+.produto-imagem { position:relative; height:auto; aspect-ratio:4/5; background:linear-gradient(145deg,#f7f5ef,#fff); }
+.produto-imagem img { object-fit:cover; }
+.produto-selo-destaque { position:absolute; top:14px; left:14px; z-index:2; padding:7px 10px; border-radius:999px; background:rgba(255,255,255,.94); color:var(--verde-escuro); font-size:.72rem; font-weight:800; box-shadow:0 5px 18px rgba(0,0,0,.09); }
+.produto-conteudo { padding:22px; }
+.produto-conteudo h3 { font-size:1.18rem; line-height:1.3; }
+.produto-acoes { display:grid; gap:12px; margin-top:auto; }
+.produto-acoes .link-destaque { text-align:center; }
+.catalogo-controles { border:1px solid rgba(23,107,77,.13); border-radius:20px; padding:24px; background:#fbfcfa; box-shadow:0 12px 35px rgba(13,69,50,.06); }
+.hero-imagem { object-fit:cover; }
+@media (max-width: 1024px) { .destaques-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .destaques-cabecalho { grid-template-columns:1fr; gap:16px; } }
+@media (max-width: 600px) { .destaques { padding:76px 0; } .destaques-grid { grid-template-columns:1fr 1fr; gap:12px; } .destaques-grid .produto-conteudo { padding:15px; } .destaques-grid .produto-conteudo p { display:none; } .destaques-grid .produto-acoes .link-destaque { display:none; } .destaques-grid .produto-conteudo h3 { font-size:1rem; } }
+@media (prefers-reduced-motion: reduce) { .produto-card, .produto-imagem img { transition:none !important; } .produto-card:hover { transform:none; } .produto-card:hover .produto-imagem img { transform:none; } }
+
 /* =========================================================
    SAÚDE QUALIMAX v1.3.1 — entrada premium do assistente
    ========================================================= */
