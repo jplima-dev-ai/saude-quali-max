@@ -2,6 +2,28 @@
 
 O histórico segue uma adaptação de Keep a Changelog e versionamento semântico.
 
+## [3.9.0] — 2026-08-24
+
+### Portfólio e descoberta
+
+- README reposicionado para leitura rápida por recrutadores, com badges de qualidade, Pages, versão, acessibilidade, PWA e licença;
+- metadados do `package.json` enriquecidos com palavras-chave, homepage, repositório, issues e autoria;
+- guia de apresentação do repositório com descrição do About, topics e configuração da Social Preview;
+- release notes dedicadas para comunicar valor técnico sem inflar capacidades do produto.
+
+### Engenharia de release
+
+- versão sincronizada para 3.9.0 em dados, cache PWA, ferramentas locais e contratos de regressão;
+- configuração de notas de release do GitHub categorizada para recursos, correções, documentação e manutenção;
+- nova evidência de qualidade e teste de regressão da camada de portfólio 3.9.0.
+
+### Mantido
+
+- 81 páginas HTML e 60 produtos;
+- acessibilidade com teclado, NVDA, Axe e foco previsível;
+- CI/CD, GitHub Pages, PWA/offline, White-label Studio e Admin Studio;
+- limites honestos: sem backend, autenticação remota, pagamento ou estoque transacional.
+
 ## [3.8.9] — 2026-08-23
 
 ### Corrigido

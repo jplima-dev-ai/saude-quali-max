@@ -1,6 +1,6 @@
 # Plano manual com NVDA
 
-**Status da versão 3.8.9:** pendente de execução manual. Testes automatizados não contam como validação NVDA.
+**Status da versão 3.9.0:** pendente de execução manual. Testes automatizados não contam como validação NVDA.
 
 ## Ambiente a registrar
 

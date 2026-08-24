@@ -24,7 +24,7 @@ A plataforma combina 81 páginas estáticas com catálogo JSON, componentes Java
 4. **Acessibilidade como requisito:** semântica, teclado, foco e anúncios entram nos contratos.
 5. **Testes em camadas:** auditorias estruturais rápidas, testes Node/Python e jornadas Playwright.
 
-## Engenharia da versão 3.8.9
+## Engenharia da versão 3.9.0
 
 - GitHub Actions para qualidade e publicação;
 - build público que exclui ferramentas e dependências;
@@ -36,7 +36,7 @@ A plataforma combina 81 páginas estáticas com catálogo JSON, componentes Java
 
 ## Resultado
 
-O repositório deixa de ser apenas um conjunto funcional de páginas e passa a demonstrar decisões de produto, engenharia de qualidade, acessibilidade, segurança e operação. Números e resultados finais da release ficam em [`QUALITY-EVIDENCE-V370.md`](QUALITY-EVIDENCE-V370.md).
+O repositório deixa de ser apenas um conjunto funcional de páginas e passa a demonstrar decisões de produto, engenharia de qualidade, acessibilidade, segurança e operação. Números e resultados finais da release ficam em [`QUALITY-EVIDENCE-V390.md`](QUALITY-EVIDENCE-V390.md).
 
 ## Próximos passos possíveis
 

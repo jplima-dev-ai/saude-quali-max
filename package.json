@@ -1,8 +1,8 @@
 {
   "name": "saude-qualimax",
-  "version": "3.8.9",
+  "version": "3.9.0",
   "private": true,
-  "description": "Plataforma estática, acessível e white-label para lojas de produtos naturais.",
+  "description": "Plataforma web acessível e white-label para e-commerce, com NVDA, WCAG, PWA, Playwright, Axe e CI/CD.",
   "scripts": {
     "dev": "python tools/serve.py",
     "setup:python": "python -m pip install -r requirements.txt",
@@ -24,5 +24,36 @@
   },
   "engines": {
     "node": ">=20"
-  }
+  },
+  "keywords": [
+    "accessibility",
+    "web-accessibility",
+    "wcag",
+    "nvda",
+    "screen-reader",
+    "inclusive-design",
+    "frontend",
+    "javascript",
+    "html",
+    "css",
+    "pwa",
+    "playwright",
+    "axe-core",
+    "e2e-testing",
+    "github-actions",
+    "ci-cd",
+    "white-label",
+    "ecommerce",
+    "responsive-design"
+  ],
+  "homepage": "https://jplima-dev-ai.github.io/saude-quali-max/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jplima-dev-ai/saude-quali-max.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jplima-dev-ai/saude-quali-max/issues"
+  },
+  "author": "João Paulo Lima",
+  "license": "SEE LICENSE IN LICENSE.md"
 }

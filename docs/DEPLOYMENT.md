@@ -16,7 +16,7 @@ Procedimento de release para GitHub Pages, Netlify ou entrega white-label. Execu
 git status
 git diff --check
 git add .
-git commit -m "release: Saúde Qualimax v3.8.9"
+git commit -m "release: Saúde Qualimax v3.9.0"
 git push
 ```
 

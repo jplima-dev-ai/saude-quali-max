@@ -1,0 +1,29 @@
+changelog:
+  exclude:
+    labels:
+      - ignore-for-release
+    authors:
+      - dependabot
+  categories:
+    - title: "Novos recursos"
+      labels:
+        - enhancement
+        - feature
+    - title: "Acessibilidade"
+      labels:
+        - accessibility
+        - a11y
+    - title: "Correções"
+      labels:
+        - bug
+        - fix
+    - title: "Documentação"
+      labels:
+        - documentation
+    - title: "Manutenção e dependências"
+      labels:
+        - dependencies
+        - maintenance
+    - title: "Outras mudanças"
+      labels:
+        - "*"

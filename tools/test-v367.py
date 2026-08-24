@@ -1,4 +1,4 @@
-"""Contratos de estabilidade e regressão da versão 3.8.9."""
+"""Contratos de estabilidade e regressão da versão 3.9.0."""
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlsplit
@@ -68,15 +68,15 @@ wellness = (ROOT / "wellness-hub.html").read_text(encoding="utf-8")
 animations = (ROOT / "assets/scripts/animations.js").read_text(encoding="utf-8")
 worker = (ROOT / "service-worker.js").read_text(encoding="utf-8")
 
-require(config["versao"] == routes["version"] == "3.8.9", "versões divergentes")
-require('qualimax-v3.8.9' in worker, "cache sem versão 3.8.9")
+require(config["versao"] == routes["version"] == "3.9.0", "versões divergentes")
+require('qualimax-v3.9.0' in worker, "cache sem versão 3.9.0")
 expected_url = "https://jplima-dev-ai.github.io/saude-quali-max/wellness-hub.html"
 require(wellness.count(expected_url) == 2, "URL pública da Central de Bem-Estar divergente")
 require("saudequalimax.com.br" not in wellness, "domínio antigo ainda presente na Central")
-require("configuracao-animacoes-v3.8.9.json" in animations, "exportação de animações desatualizada")
+require("configuracao-animacoes-v3.9.0.json" in animations, "exportação de animações desatualizada")
 require("configuracao-animacoes-v3.3.4.json" not in animations, "nome antigo na exportação de animações")
 
 if errors:
-    print("v3.8.9 FAILED\n" + "\n".join(errors))
+    print("v3.9.0 FAILED\n" + "\n".join(errors))
     sys.exit(1)
-print("v3.8.9 OK: 81 páginas, recursos e regressões sutis validados")
+print("v3.9.0 OK: 81 páginas, recursos e regressões sutis validados")

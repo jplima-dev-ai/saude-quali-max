@@ -12,7 +12,7 @@
 ```bash
 git init
 git add .
-git commit -m "release: Saúde Qualimax v3.8.9"
+git commit -m "release: Saúde Qualimax v3.9.0"
 git branch -M main
 git remote add origin https://github.com/jplima-dev-ai/saude-quali-max.git
 git push -u origin main
@@ -23,10 +23,10 @@ Se o repositório já possuir histórico, não execute `git init` nem adicione o
 ## Configuração recomendada do repositório
 
 - descrição curta e URL da demonstração;
-- tópicos: `accessibility`, `vanilla-js`, `pwa`, `github-pages`, `white-label`, `nvda`;
+- descrição, website, 20 topics e Social Preview conforme [`REPOSITORY-PRESENTATION.md`](REPOSITORY-PRESENTATION.md);
 - branch protection exigindo o workflow de qualidade;
 - imagem social baseada em uma captura real da página inicial;
-- releases com tag semântica, por exemplo `v3.8.9`.
+- releases com tag semântica, por exemplo `v3.9.0`.
 
 Para criar uma release verificável, envie a tag correspondente à versão. O workflow executará toda a validação e anexará o ZIP e o SHA-256. Consulte [`RELEASES.md`](RELEASES.md).
 

@@ -1,4 +1,4 @@
-"""Regression contracts for accessible White Label Studio file inputs in release 3.8.9."""
+"""Regression contracts for accessible White Label Studio file inputs in release 3.9.0."""
 from pathlib import Path
 import json, sys
 ROOT=Path(__file__).resolve().parents[1]
@@ -16,8 +16,8 @@ cfg=json.loads((ROOT/'data/config.json').read_text(encoding='utf-8'))
 routes=json.loads((ROOT/'data/routes.json').read_text(encoding='utf-8'))
 css=(ROOT/'assets/styles/client-customizer-v352.css').read_text(encoding='utf-8')
 sw=(ROOT/'service-worker.js').read_text(encoding='utf-8')
-req(pkg.get('version')==cfg.get('versao')==routes.get('version')=='3.8.9','versões 3.8.9 divergentes')
-req('qualimax-v3.8.9' in sw,'cache PWA 3.8.9 ausente')
+req(pkg.get('version')==cfg.get('versao')==routes.get('version')=='3.9.0','versões 3.9.0 divergentes')
+req('qualimax-v3.9.0' in sw,'cache PWA 3.9.0 ausente')
 req('input[data-wl-logo],input[data-wl-import]{color:#173e30!important;background:#fff!important}' in css,'campos de arquivo sem cor explícita acessível')
 req('input[data-wl-logo]::file-selector-button,input[data-wl-import]::file-selector-button{color:#fff!important;background:#176b4d!important' in css,'botão nativo de arquivo sem contraste explícito')
 req('::-webkit-file-upload-button' in css,'fallback WebKit do seletor de arquivo ausente')
@@ -26,8 +26,8 @@ req('.wl352-file-label:focus-within{outline:3px solid #0d4532;outline-offset:3px
 req(css.rfind('opacity:1') > css.rfind('opacity:.01'),'a regra final ainda deixa file inputs com opacidade quase invisível')
 req(ratio('#173e30','#ffffff')>=4.5,'contraste do nome do arquivo insuficiente')
 req(ratio('#ffffff','#176b4d')>=4.5,'contraste do botão de arquivo insuficiente')
-req((ROOT/'docs/QUALITY-EVIDENCE-V389.md').is_file(),'evidência 3.8.9 ausente')
-req('## [3.8.9]' in (ROOT/'docs/CHANGELOG.md').read_text(encoding='utf-8'),'changelog 3.8.9 ausente')
+req((ROOT/'docs/QUALITY-EVIDENCE-V389.md').is_file(),'evidência 3.9.0 ausente')
+req('## [3.9.0]' in (ROOT/'docs/CHANGELOG.md').read_text(encoding='utf-8'),'changelog 3.9.0 ausente')
 if errors:
-    print('v3.8.9 FAILED\n'+'\n'.join(errors));sys.exit(1)
-print('v3.8.9 OK: seletores de arquivo do White Label Studio com contraste acessível')
+    print('v3.9.0 FAILED\n'+'\n'.join(errors));sys.exit(1)
+print('v3.9.0 OK: seletores de arquivo do White Label Studio com contraste acessível')

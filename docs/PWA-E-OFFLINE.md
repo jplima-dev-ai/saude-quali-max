@@ -13,7 +13,7 @@ O shell essencial é pré-armazenado. Navegações usam o conteúdo disponível 
 
 ## Atualização
 
-Cada versão deve renovar o identificador do cache e listar os novos recursos essenciais. Na versão atual, confirme `qualimax-v3.8.9` em `service-worker.js`; nunca reutilize o identificador de uma versão anterior.
+Cada versão deve renovar o identificador do cache e listar os novos recursos essenciais. Na versão atual, confirme `qualimax-v3.9.0` em `service-worker.js`; nunca reutilize o identificador de uma versão anterior.
 
 ## Verificação de release
 

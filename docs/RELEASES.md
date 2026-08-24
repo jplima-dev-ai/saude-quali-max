@@ -11,14 +11,14 @@ O workflow `.github/workflows/release.yml` é acionado por tags no formato `vX.Y
 5. calcula SHA-256;
 6. cria a release com o ZIP, o hash e notas automáticas.
 
-## Publicar a versão 3.8.9
+## Publicar a versão 3.9.0
 
 ```bash
 git add .
-git commit -m "release: Saúde Qualimax v3.8.9"
+git commit -m "release: Saúde Qualimax v3.9.0"
 git push
-git tag v3.8.9
-git push origin v3.8.9
+git tag v3.9.0
+git push origin v3.9.0
 ```
 
 O workflow usa somente o `GITHUB_TOKEN` do próprio repositório, com permissão `contents: write` limitada ao job de release. Nenhum token pessoal deve ser colocado no código.
