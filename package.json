@@ -18,7 +18,7 @@
     "format:check": "prettier --check README.md docs .github tests/e2e tests/visual playwright.config.js playwright.screenshots.config.js package.json"
   },
   "devDependencies": {
-    "@axe-core/playwright": "4.13.0",
+    "@axe-core/playwright": "4.14.0",
     "@playwright/test": "1.62.1",
     "prettier": "3.9.6"
   },
